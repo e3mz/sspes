@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rcUofELMcExboxf8wdP7p9ZPbqw=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1muBR72pFDkbuA6gZ5sQy9VO4C4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IService1">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IService1" contract="SspesService.IService1" bindingType="basicHttpBinding" address="http://localhost:35373/Service1.svc/api" bindingConfiguration="BasicHttpBinding_IService1">
+    <endpoint name="BasicHttpBinding_IService1" contract="SspesService.IService1" bindingType="basicHttpBinding" address="http://192.168.1.124:8891/SspesRestService/Service1.svc/api" bindingConfiguration="BasicHttpBinding_IService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:35373/Service1.svc/api</serializedValue>
+          <serializedValue>http://192.168.1.124:8891/SspesRestService/Service1.svc/api</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

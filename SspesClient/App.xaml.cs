@@ -16,6 +16,7 @@ using Friend = SspesClient.SspesService.Friend;
 
 using System.Collections.ObjectModel;
 using Microsoft.Phone.Notification;
+using SspesClient.SspesService;
 
 namespace SspesClient
 {
@@ -25,6 +26,7 @@ namespace SspesClient
         public static ObservableCollection<Friend> friendsList = new ObservableCollection<Friend>();
         public static Friend currentUser = new Friend();
         public static Friend currentOpponent = new Friend();
+        public static Battle currentBattle = new Battle();
 
         public static HttpNotificationChannel pushChannel;
         public static string channelName = "SspecChan";

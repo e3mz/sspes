@@ -13,9 +13,20 @@ namespace SspesClient.Classes
 {
     public class Friend
     {
+       
         public Guid UserId { get; set; }
+        
         public String UserName { get; set; }
+        
         public String Password { get; set; }
+        
+        public String PChan { get; set; }
+
+        public Friend()
+        {
+            UserId = Guid.NewGuid();
+            PChan = "";
+        }
         
 
     }

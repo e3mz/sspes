@@ -9,9 +9,9 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:35373/Service1.svc/api" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IService1" contract="SspesService.IService1"
-                name="BasicHttpBinding_IService1" />
+            <endpoint address="http://192.168.1.124:8891/SspesRestService/Service1.svc/api"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService1"
+                contract="SspesService.IService1" name="BasicHttpBinding_IService1" />
         </client>
     </system.serviceModel>
 </configuration>

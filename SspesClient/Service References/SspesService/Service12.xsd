@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SspesRestService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SspesRestService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:35373/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.1.124:8891/SspesRestService/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Friend">
     <xs:sequence>
       <xs:element minOccurs="0" name="PChan" nillable="true" type="xs:string" />
@@ -16,4 +16,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFriend" nillable="true" type="tns:ArrayOfFriend" />
+  <xs:complexType name="ArrayOfBattle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Battle" nillable="true" type="tns:Battle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBattle" nillable="true" type="tns:ArrayOfBattle" />
+  <xs:complexType name="Battle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BattleId" type="ser:guid" />
+      <xs:element minOccurs="0" name="player1" nillable="true" type="tns:Friend" />
+      <xs:element minOccurs="0" name="player1Move" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="player1Score" type="xs:int" />
+      <xs:element minOccurs="0" name="player2" nillable="true" type="tns:Friend" />
+      <xs:element minOccurs="0" name="player2Move" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="player2Score" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Battle" nillable="true" type="tns:Battle" />
 </xs:schema>

@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using SspesClient.Util;
 using Friend = SspesClient.SspesService.Friend;
 using Challenge = SspesClient.SspesService.Challenge;
+using Battle = SspesClient.SspesService.Battle;
 using Microsoft.Phone.Notification;
 using Newtonsoft.Json;
 
@@ -30,7 +31,7 @@ namespace SspesClient
             mySer.getAllUsersCompleted += new EventHandler<SspesService.getAllUsersCompletedEventArgs>(mySer_getAllUsersCompleted);
             mySer.getAllUsersAsync();
             mySer.challengeCompleted += new EventHandler<SspesService.challengeCompletedEventArgs>(mySer_challengeCompleted);
-            
+
             tbx_guid.Text = App.currentUser.UserId.ToString();
             tbx_userName.Text = App.currentUser.UserName;
 
@@ -59,7 +60,8 @@ namespace SspesClient
         {
             if (e.Result == true)
             {
-                MessageBox.Show("Waiting for opponent move ...");
+                //MessageBox.Show("Waiting for opponent move ...");
+                NavigationService.Navigate(new Uri("/Arena.xaml", UriKind.Relative));
             }
         }
 
@@ -82,61 +84,61 @@ namespace SspesClient
         private void btn_play_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            
-            chellange(btn.Tag.ToString()); 
-            
+            chellange(btn.Tag.ToString());
+
         }
 
         private void chellange(String opponent)
         {
             //MessageBox.Show("Playing against " + opponent);
             App.currentOpponent = (from u in App.friendsList
-                        where u.UserName == opponent
-                        select u).FirstOrDefault();
+                                   where u.UserName == opponent
+                                   select u).FirstOrDefault();
 
-            Challenge c = new Challenge() { ChallengeFrom = App.currentUser, ChallengeTo = App.currentOpponent, ChallengeId = new Guid() };
+            Challenge c = new Challenge() { ChallengeFrom = App.currentUser, ChallengeTo = App.currentOpponent, ChallengeId = Guid.NewGuid() };
+            App.currentBattle = new Battle() { BattleId = c.ChallengeId, player1 = App.currentUser, player2 = App.currentOpponent };
             mySer.challengeAsync(c);
 
-            NavigationService.Navigate(new Uri("/Arena.xaml", UriKind.Relative));
-             
+            
+
         }
 
         private void Image_Tap(object sender, GestureEventArgs e)
         {
             Image btn = (Image)sender;
-            chellange(btn.Tag.ToString()); 
+            chellange(btn.Tag.ToString());
         }
 
         void pushChannel_HttpNotificationReceived(object sender, HttpNotificationEventArgs e)
         {
-            Battle message;
+            Challenge challenge = null;
+            Battle battle = null;
 
             using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Notification.Body))
             {
-                //message = reader.ReadToEnd();
                 string inp = reader.ReadToEnd();
-                //inp += "}";
-                //string bla = "{\"msg\":" + inp; ;
-                string rep = inp.Remove(0, 7);
-                string repl = rep.Remove(rep.Length - 2, 1);
-                message = JsonConvert.DeserializeObject<Battle>(repl);
-                //if (message.MessageFrom.NickName.Equals(App._currentUser.NickName))
-                //{
-                //    message.own = true;
-                //}
+
+                if (inp.Contains("challenge"))
+                {
+                    challenge = JsonConvert.DeserializeObject<Challenge>(inp);
+                }
+                else
+                {
+                    battle = JsonConvert.DeserializeObject<Battle>(inp);
+                }
             }
 
             Dispatcher.BeginInvoke(() =>
             {
-                //App._chatMessages.Add(message);
-                //Rectangle r = new Rectangle();
-                //r.Width = 30;
-                //r.Height = 30;
-                //r.Fill = new SolidColorBrush(Colors.LightGray);
+                if (challenge != null)
+                {
+                    MessageBox.Show("Channelge from: " + challenge.ChallengeFrom.UserName);
+                }
+                else
+                {
+                    MessageBox.Show("Game over");
+                }
 
-
-
-                //lb_chatMessages.ScrollIntoView(App._chatMessages[App._chatMessages.Count - 1]);
             });
 
 

@@ -59,6 +59,21 @@ namespace SspesRestService
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "user")]
         bool updateUser(Friend friend);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "battles/{userId}")]
+        List<Battle> getAllBattlesForUser(Guid userId);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "move")]
+        bool playerMove(String move, Guid playerId, Guid battleId);
     }
 
 

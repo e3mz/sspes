@@ -150,6 +150,126 @@ namespace SspesClient.SspesService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Battle", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService")]
+    public partial class Battle : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Guid BattleIdField;
+        
+        private SspesClient.SspesService.Friend player1Field;
+        
+        private string player1MoveField;
+        
+        private int player1ScoreField;
+        
+        private SspesClient.SspesService.Friend player2Field;
+        
+        private string player2MoveField;
+        
+        private int player2ScoreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid BattleId {
+            get {
+                return this.BattleIdField;
+            }
+            set {
+                if ((this.BattleIdField.Equals(value) != true)) {
+                    this.BattleIdField = value;
+                    this.RaisePropertyChanged("BattleId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SspesClient.SspesService.Friend player1 {
+            get {
+                return this.player1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.player1Field, value) != true)) {
+                    this.player1Field = value;
+                    this.RaisePropertyChanged("player1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string player1Move {
+            get {
+                return this.player1MoveField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.player1MoveField, value) != true)) {
+                    this.player1MoveField = value;
+                    this.RaisePropertyChanged("player1Move");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int player1Score {
+            get {
+                return this.player1ScoreField;
+            }
+            set {
+                if ((this.player1ScoreField.Equals(value) != true)) {
+                    this.player1ScoreField = value;
+                    this.RaisePropertyChanged("player1Score");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SspesClient.SspesService.Friend player2 {
+            get {
+                return this.player2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.player2Field, value) != true)) {
+                    this.player2Field = value;
+                    this.RaisePropertyChanged("player2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string player2Move {
+            get {
+                return this.player2MoveField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.player2MoveField, value) != true)) {
+                    this.player2MoveField = value;
+                    this.RaisePropertyChanged("player2Move");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int player2Score {
+            get {
+                return this.player2ScoreField;
+            }
+            set {
+                if ((this.player2ScoreField.Equals(value) != true)) {
+                    this.player2ScoreField = value;
+                    this.RaisePropertyChanged("player2Score");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SspesService.IService1")]
     public interface IService1 {
@@ -183,6 +303,11 @@ namespace SspesClient.SspesService {
         System.IAsyncResult BeginupdateUser(SspesClient.SspesService.Friend friend, System.AsyncCallback callback, object asyncState);
         
         bool EndupdateUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getAllBattlesForUser", ReplyAction="http://tempuri.org/IService1/getAllBattlesForUserResponse")]
+        System.IAsyncResult BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> EndgetAllBattlesForUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -305,6 +430,25 @@ namespace SspesClient.SspesService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getAllBattlesForUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getAllBattlesForUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<SspesClient.SspesService.IService1>, SspesClient.SspesService.IService1 {
         
         private BeginOperationDelegate onBeginloginDelegate;
@@ -342,6 +486,12 @@ namespace SspesClient.SspesService {
         private EndOperationDelegate onEndupdateUserDelegate;
         
         private System.Threading.SendOrPostCallback onupdateUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetAllBattlesForUserDelegate;
+        
+        private EndOperationDelegate onEndgetAllBattlesForUserDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetAllBattlesForUserCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -407,6 +557,8 @@ namespace SspesClient.SspesService {
         public event System.EventHandler<challengeCompletedEventArgs> challengeCompleted;
         
         public event System.EventHandler<updateUserCompletedEventArgs> updateUserCompleted;
+        
+        public event System.EventHandler<getAllBattlesForUserCompletedEventArgs> getAllBattlesForUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -686,6 +838,52 @@ namespace SspesClient.SspesService {
                         friend}, this.onEndupdateUserDelegate, this.onupdateUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SspesClient.SspesService.IService1.BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetAllBattlesForUser(userId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> SspesClient.SspesService.IService1.EndgetAllBattlesForUser(System.IAsyncResult result) {
+            return base.Channel.EndgetAllBattlesForUser(result);
+        }
+        
+        private System.IAsyncResult OnBegingetAllBattlesForUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Guid userId = ((System.Guid)(inValues[0]));
+            return ((SspesClient.SspesService.IService1)(this)).BegingetAllBattlesForUser(userId, callback, asyncState);
+        }
+        
+        private object[] OnEndgetAllBattlesForUser(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> retVal = ((SspesClient.SspesService.IService1)(this)).EndgetAllBattlesForUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetAllBattlesForUserCompleted(object state) {
+            if ((this.getAllBattlesForUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getAllBattlesForUserCompleted(this, new getAllBattlesForUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getAllBattlesForUserAsync(System.Guid userId) {
+            this.getAllBattlesForUserAsync(userId, null);
+        }
+        
+        public void getAllBattlesForUserAsync(System.Guid userId, object userState) {
+            if ((this.onBegingetAllBattlesForUserDelegate == null)) {
+                this.onBegingetAllBattlesForUserDelegate = new BeginOperationDelegate(this.OnBegingetAllBattlesForUser);
+            }
+            if ((this.onEndgetAllBattlesForUserDelegate == null)) {
+                this.onEndgetAllBattlesForUserDelegate = new EndOperationDelegate(this.OnEndgetAllBattlesForUser);
+            }
+            if ((this.ongetAllBattlesForUserCompletedDelegate == null)) {
+                this.ongetAllBattlesForUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetAllBattlesForUserCompleted);
+            }
+            base.InvokeAsync(this.onBegingetAllBattlesForUserDelegate, new object[] {
+                        userId}, this.onEndgetAllBattlesForUserDelegate, this.ongetAllBattlesForUserCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -836,6 +1034,19 @@ namespace SspesClient.SspesService {
             public bool EndupdateUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 bool _result = ((bool)(base.EndInvoke("updateUser", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = userId;
+                System.IAsyncResult _result = base.BeginInvoke("getAllBattlesForUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> EndgetAllBattlesForUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> _result = ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle>)(base.EndInvoke("getAllBattlesForUser", _args, result)));
                 return _result;
             }
         }

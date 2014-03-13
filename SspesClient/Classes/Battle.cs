@@ -10,15 +10,23 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Friend = SspesClient.SspesService.Friend;
 
-namespace SspesClient
+namespace SspesClient.Classes
 {
     public class Battle
     {
+        
+        public Guid BattleId { get; set; }
+     
         public Friend player1 { get; set; }
+    
         public Friend player2 { get; set; }
+
         public String player1Move { get; set; }
+  
         public String player2Move { get; set; }
+  
         public int player1Score { get; set; }
+
         public int player2Score { get; set; }
 
         public Battle()

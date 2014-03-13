@@ -16,3 +16,4 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\D
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\XapCacheFile.xml
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.dll
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.xml
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.csprojResolveAssemblyReference.cache

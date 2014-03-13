@@ -107,7 +107,6 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
-    <None Include="Service References\SspesService\Service1.disco" />
     <None Include="Service References\SspesService\configuration91.svcinfo" />
     <None Include="Service References\SspesService\configuration.svcinfo" />
     <None Include="Service References\SspesService\Reference.svcmap">
@@ -127,10 +126,14 @@
     <None Include="Service References\SspesService\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SspesService\Service1.disco" />
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\SspesService\SspesClient.SspesService.Battle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SspesService\SspesClient.SspesService.Friend.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">

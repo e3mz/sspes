@@ -11,11 +11,13 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Friend = SspesClient.SspesService.Friend;
+using Battle = SspesClient.SspesService.Battle;
 
 namespace SspesClient
 {
     public partial class Arena : PhoneApplicationPage
     {
+        SspesService.Service1Client mySer = new SspesService.Service1Client();
         Battle currentBattle;
         bool pl1Played = false;
         bool pl2Played = false;
@@ -42,19 +44,22 @@ namespace SspesClient
             
             String move = ((Ellipse)sender).Tag.ToString();
 
-            if (pl1Played == false)
-            {
-                currentBattle = new Battle();
-                currentBattle.player1 = App.currentUser;
-                currentBattle.player1Move = move;
-                pl1Played = true;
-            }else
-            {
-                currentBattle.player2 = App.currentOpponent;
-                currentBattle.player2Move = move;
-                pl2Played = true;
-                showdown();
-            }
+            App.currentBattle.player1Move = move;
+           
+
+            //if (pl1Played == false)
+            //{
+            //    currentBattle = new Battle();
+            //    currentBattle.player1 = App.currentUser;
+            //    currentBattle.player1Move = move;
+            //    pl1Played = true;
+            //}else
+            //{
+            //    currentBattle.player2 = App.currentOpponent;
+            //    currentBattle.player2Move = move;
+            //    pl2Played = true;
+            //    showdown();
+            //}
 
         }
 

@@ -142,5 +142,84 @@ namespace SspesRestService
             }
             return true;
         }
+
+
+        public List<Battle> getAllBattlesForUser(Guid userId)
+        {
+            return null;
+        }
+
+
+        public bool playerMove(string move, Guid playerId, Guid battleId)
+        {
+            // get battle by id
+            var battle = (from b in runningBattles
+                          where b.BattleId == battleId
+                          select b).FirstOrDefault();
+            if (battle != null)
+            {
+                if (battle.player1.UserId == playerId)
+                {
+                    battle.player1Move = move;
+                }
+                else
+                {
+                    battle.player2Move = move;
+                }
+            }
+
+            if(!String.IsNullOrEmpty(battle.player1Move) && !String.IsNullOrEmpty(battle.player2Move))
+            {
+                EndBattleNotify(battle);
+            }
+            // if both played: notify both
+
+            return true;
+        }
+
+        private void EndBattleNotify(Battle battle)
+        {
+            notifyAfterBattle(battle.player1.PChan, battle);
+            notifyAfterBattle(battle.player2.PChan, battle);
+        }
+
+        public void notifyAfterBattle(string chan, Battle battle)
+        {
+            try
+            {
+
+                HttpWebRequest sendNotificationRequest = (HttpWebRequest)WebRequest.Create(chan);
+                sendNotificationRequest.Method = "POST";
+                sendNotificationRequest.ContentType = "application/json";
+                string rawMessage = JsonConvert.SerializeObject(battle);
+                byte[] notificationMessage = Encoding.Default.GetBytes(rawMessage);
+                // Set the web request content length.
+                sendNotificationRequest.ContentLength = notificationMessage.Length;
+                //sendNotificationRequest.ContentType = "text/xml";
+                sendNotificationRequest.Headers.Add("X-NotificationClass", "3");
+                using (Stream requestStream = sendNotificationRequest.GetRequestStream())
+                {
+                    requestStream.Write(notificationMessage, 0, notificationMessage.Length);
+                }
+                // Send the notification and get the response.
+                HttpWebResponse response = (HttpWebResponse)sendNotificationRequest.GetResponse();
+                string notificationStatus = response.Headers["X-NotificationStatus"];
+                string notificationChannelStatus = response.Headers["X-SubscriptionStatus"];
+                string deviceConnectionStatus = response.Headers["X-DeviceConnectionStatus"];
+
+                // Encode the entire string, and print out the counts and the resulting bytes.
+                System.Diagnostics.Debug.WriteLine("Encoding the entire string:");
+                //PrintCountsAndBytes(rawMessage, Encoding.UTF7);
+                //PrintCountsAndBytes(rawMessage, Encoding.UTF8);
+                //PrintCountsAndBytes(rawMessage, Encoding.Unicode);
+                //PrintCountsAndBytes(rawMessage, Encoding.BigEndianUnicode);
+                //PrintCountsAndBytes(rawMessage, Encoding.UTF32);
+
+            }
+            catch (Exception)
+            {
+                System.Diagnostics.Debug.WriteLine("Fail send push");
+            }
+        }
     }
 }
