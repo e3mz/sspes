@@ -308,6 +308,11 @@ namespace SspesClient.SspesService {
         System.IAsyncResult BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> EndgetAllBattlesForUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/playerMove", ReplyAction="http://tempuri.org/IService1/playerMoveResponse")]
+        System.IAsyncResult BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState);
+        
+        bool EndplayerMove(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -449,6 +454,25 @@ namespace SspesClient.SspesService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class playerMoveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public playerMoveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<SspesClient.SspesService.IService1>, SspesClient.SspesService.IService1 {
         
         private BeginOperationDelegate onBeginloginDelegate;
@@ -492,6 +516,12 @@ namespace SspesClient.SspesService {
         private EndOperationDelegate onEndgetAllBattlesForUserDelegate;
         
         private System.Threading.SendOrPostCallback ongetAllBattlesForUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginplayerMoveDelegate;
+        
+        private EndOperationDelegate onEndplayerMoveDelegate;
+        
+        private System.Threading.SendOrPostCallback onplayerMoveCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -559,6 +589,8 @@ namespace SspesClient.SspesService {
         public event System.EventHandler<updateUserCompletedEventArgs> updateUserCompleted;
         
         public event System.EventHandler<getAllBattlesForUserCompletedEventArgs> getAllBattlesForUserCompleted;
+        
+        public event System.EventHandler<playerMoveCompletedEventArgs> playerMoveCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -884,6 +916,56 @@ namespace SspesClient.SspesService {
                         userId}, this.onEndgetAllBattlesForUserDelegate, this.ongetAllBattlesForUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult SspesClient.SspesService.IService1.BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginplayerMove(move, playerId, battleId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool SspesClient.SspesService.IService1.EndplayerMove(System.IAsyncResult result) {
+            return base.Channel.EndplayerMove(result);
+        }
+        
+        private System.IAsyncResult OnBeginplayerMove(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string move = ((string)(inValues[0]));
+            System.Guid playerId = ((System.Guid)(inValues[1]));
+            System.Guid battleId = ((System.Guid)(inValues[2]));
+            return ((SspesClient.SspesService.IService1)(this)).BeginplayerMove(move, playerId, battleId, callback, asyncState);
+        }
+        
+        private object[] OnEndplayerMove(System.IAsyncResult result) {
+            bool retVal = ((SspesClient.SspesService.IService1)(this)).EndplayerMove(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnplayerMoveCompleted(object state) {
+            if ((this.playerMoveCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.playerMoveCompleted(this, new playerMoveCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void playerMoveAsync(string move, System.Guid playerId, System.Guid battleId) {
+            this.playerMoveAsync(move, playerId, battleId, null);
+        }
+        
+        public void playerMoveAsync(string move, System.Guid playerId, System.Guid battleId, object userState) {
+            if ((this.onBeginplayerMoveDelegate == null)) {
+                this.onBeginplayerMoveDelegate = new BeginOperationDelegate(this.OnBeginplayerMove);
+            }
+            if ((this.onEndplayerMoveDelegate == null)) {
+                this.onEndplayerMoveDelegate = new EndOperationDelegate(this.OnEndplayerMove);
+            }
+            if ((this.onplayerMoveCompletedDelegate == null)) {
+                this.onplayerMoveCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnplayerMoveCompleted);
+            }
+            base.InvokeAsync(this.onBeginplayerMoveDelegate, new object[] {
+                        move,
+                        playerId,
+                        battleId}, this.onEndplayerMoveDelegate, this.onplayerMoveCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1047,6 +1129,21 @@ namespace SspesClient.SspesService {
             public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> EndgetAllBattlesForUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> _result = ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle>)(base.EndInvoke("getAllBattlesForUser", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = move;
+                _args[1] = playerId;
+                _args[2] = battleId;
+                System.IAsyncResult _result = base.BeginInvoke("playerMove", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndplayerMove(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("playerMove", _args, result)));
                 return _result;
             }
         }

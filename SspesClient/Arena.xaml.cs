@@ -30,8 +30,14 @@ namespace SspesClient
             currentBattle = new Battle();
             tbx_pl1Score.Text = currentBattle.player1Score.ToString();
             tbx_pl2Score.Text = currentBattle.player2Score.ToString();
+            mySer.playerMoveCompleted += new EventHandler<SspesService.playerMoveCompletedEventArgs>(mySer_playerMoveCompleted);
             
 
+        }
+
+        void mySer_playerMoveCompleted(object sender, SspesService.playerMoveCompletedEventArgs e)
+        {
+            tbx_playerName.Foreground = new SolidColorBrush(Colors.Green);
         }
 
         private void waitForFirstPlayer()
@@ -45,6 +51,7 @@ namespace SspesClient
             String move = ((Ellipse)sender).Tag.ToString();
 
             App.currentBattle.player1Move = move;
+            mySer.playerMoveAsync(move, App.currentUser.UserId, App.currentBattle.BattleId);
            
 
             //if (pl1Played == false)
@@ -63,7 +70,7 @@ namespace SspesClient
 
         }
 
-        private void showdown()
+        public void showdown()
         {
             if (currentBattle.player1Move == currentBattle.player2Move)
             {

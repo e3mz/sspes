@@ -118,7 +118,7 @@ namespace SspesClient
             {
                 string inp = reader.ReadToEnd();
 
-                if (inp.Contains("challenge"))
+                if (inp.Contains("Challenge"))
                 {
                     challenge = JsonConvert.DeserializeObject<Challenge>(inp);
                 }
@@ -133,10 +133,14 @@ namespace SspesClient
                 if (challenge != null)
                 {
                     MessageBox.Show("Channelge from: " + challenge.ChallengeFrom.UserName);
+                    NavigationService.Navigate(new Uri("/Arena.xaml", UriKind.Relative));
                 }
                 else
                 {
                     MessageBox.Show("Game over");
+                    App.currentBattle = battle;
+                    showdown();
+                    
                 }
 
             });
@@ -174,6 +178,95 @@ namespace SspesClient
                 //    e.ChannelUri.ToString()));
 
             });
+        }
+
+        public void showdown()
+        {
+            if (App.currentBattle.player1Move == App.currentBattle.player2Move)
+            {
+                MessageBox.Show("Unentschieden");
+            }
+            else
+            {
+                switch (App.currentBattle.player1Move)
+                {
+                    case "stone":
+                        if (App.stoneBeats.Contains(App.currentBattle.player2Move))
+                        {
+                            App.currentBattle.player1Score += 1;
+                            announceWinner(App.currentBattle.player1);
+                        }
+                        else
+                        {
+                            App.currentBattle.player2Score += 1;
+                            announceWinner(App.currentBattle.player2);
+                        }
+                        break;
+                    case "scissors":
+                        if (App.scizzorsBeats.Contains(App.currentBattle.player2Move))
+                        {
+                            App.currentBattle.player1Score += 1;
+                            announceWinner(App.currentBattle.player1);
+                        }
+                        else
+                        {
+                            App.currentBattle.player2Score += 1;
+                            announceWinner(App.currentBattle.player2);
+                        }
+                        break;
+                    case "paper":
+                        if (App.paperBeats.Contains(App.currentBattle.player2Move))
+                        {
+                            App.currentBattle.player1Score += 1;
+                            announceWinner(App.currentBattle.player1);
+                        }
+                        else
+                        {
+                            App.currentBattle.player2Score += 1;
+                            announceWinner(App.currentBattle.player2);
+                        }
+                        break;
+                    case "lizard":
+                        if (App.lizardBeats.Contains(App.currentBattle.player2Move))
+                        {
+                            App.currentBattle.player1Score += 1;
+                            announceWinner(App.currentBattle.player1);
+                        }
+                        else
+                        {
+                            App.currentBattle.player2Score += 1;
+                            announceWinner(App.currentBattle.player2);
+                        }
+                        break;
+                    case "spock":
+                        if (App.spockBeats.Contains(App.currentBattle.player2Move))
+                        {
+                            App.currentBattle.player1Score += 1;
+                            announceWinner(App.currentBattle.player1);
+                        }
+                        else
+                        {
+                            App.currentBattle.player2Score += 1;
+                            announceWinner(App.currentBattle.player2);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            //pl1Played = false;
+            //pl2Played = false;
+
+        }
+
+        void announceWinner(Friend winner)
+        {
+
+
+          
+            MessageBox.Show(winner.UserName + " wins");
         }
     }
 }
