@@ -1,0 +1,9 @@
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\App_Data\Users.xml
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\SspesRestService.dll
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\SspesRestService.pdb
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\obj\Debug\SspesRestService.dll
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\obj\Debug\SspesRestService.pdb
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\App_Data\Battles.xml
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\Newtonsoft.Json.dll
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\bin\Newtonsoft.Json.xml
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesRestService\obj\Debug\SspesRestService.csprojResolveAssemblyReference.cache

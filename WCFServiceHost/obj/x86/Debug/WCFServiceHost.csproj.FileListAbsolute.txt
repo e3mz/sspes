@@ -1,0 +1,9 @@
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\bin\Debug\WCFServiceHost.exe.config
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\bin\Debug\WCFServiceHost.exe
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\bin\Debug\WCFServiceHost.pdb
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\bin\Debug\Fleck.dll
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.csprojResolveAssemblyReference.cache
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.ProjectInstaller.resources
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.csproj.GenerateResource.Cache
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.exe
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.pdb
