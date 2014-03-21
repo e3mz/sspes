@@ -10,14 +10,14 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using Friend = SspesClient.SspesService.Friend;
+using User = SspesClient.SspesService.User;
 using Battle = SspesClient.SspesService.Battle;
 
 namespace SspesClient
 {
     public partial class Arena : PhoneApplicationPage
     {
-        SspesService.Service1Client mySer = new SspesService.Service1Client();
+        SspesService.SspesServiceClient mySer = new SspesService.SspesServiceClient();
         Battle currentBattle;
         bool pl1Played = false;
         bool pl2Played = false;
@@ -151,7 +151,7 @@ namespace SspesClient
                
         }
 
-        void announceWinner(Friend winner)
+        void announceWinner(User winner)
         {
 
 
@@ -164,7 +164,15 @@ namespace SspesClient
                 tbx_opponentName.Foreground = new SolidColorBrush(Colors.Green);
                 tbx_pl2Score.Text = currentBattle.player2Score.ToString();
             }
-            MessageBox.Show(winner.UserName + " wins");
+            if (winner.UserId == App.currentUser.UserId)
+            {
+                MessageBox.Show("Gratulations, You win!");
+            }
+            else
+            {
+                MessageBox.Show("You Lose!");
+            }
+
         }
 
 

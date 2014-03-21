@@ -10,6 +10,7 @@ using SspesRestService.Classes;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace SspesRestService
 {
@@ -221,5 +222,50 @@ namespace SspesRestService
                 System.Diagnostics.Debug.WriteLine("Fail send push");
             }
         }
+
+        //public void sendToast(string chan, Battle battle)
+        //{
+        //    try
+        //    {
+        //        HttpWebRequest sendNotificationRequest = (HttpWebRequest)WebRequest.Create(chan);
+
+        //        // Create an HTTPWebRequest that posts the toast notification to the Microsoft Push Notification Service.
+        //        // HTTP POST is the only method allowed to send the notification.
+        //        sendNotificationRequest.Method = "POST";
+        //        string toastMessage = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+        //            "<wp:Notification xmlns:wp=\"WPNotification\">" +
+        //               "<wp:Toast>" +
+        //                    "<wp:From>" + battle.player2.UserName + " wants to throw down!</wp:From>" +
+        //                    "<wp:Battle>" + SerializeObject<Battle>(battle) + "</wp:Battle>" +
+        //                    "<wp:Param>/Page2.xaml?NavigatedFrom=Toast Notification</wp:Param>" +
+        //               "</wp:Toast> " +
+        //            "</wp:Notification>";
+
+        //        // Set the notification payload to send.
+        //        byte[] notificationMessage = Encoding.Default.GetBytes(toastMessage);
+
+        //        // Set the web request content length.
+        //        sendNotificationRequest.ContentLength = notificationMessage.Length;
+        //        sendNotificationRequest.ContentType = "text/xml";
+        //        sendNotificationRequest.Headers.Add("X-WindowsPhone-Target", "toast");
+        //        sendNotificationRequest.Headers.Add("X-NotificationClass", "2");
+
+
+        //        using (Stream requestStream = sendNotificationRequest.GetRequestStream())
+        //        {
+        //            requestStream.Write(notificationMessage, 0, notificationMessage.Length);
+        //        }
+
+        //        // Send the notification and get the response.
+        //        HttpWebResponse response = (HttpWebResponse)sendNotificationRequest.GetResponse();
+        //    }
+        //    catch (Exception)
+        //    {
+                
+        //        throw;
+        //    }
+        //}
+
+        
     }
 }

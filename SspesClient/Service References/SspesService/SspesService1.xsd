@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.124:8891/SspesService/SspesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PChan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="Challenge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChallengeFrom" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ChallengeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ChallengeTo" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Challenge" nillable="true" type="tns:Challenge" />
+  <xs:complexType name="ArrayOfBattle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Battle" nillable="true" type="tns:Battle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBattle" nillable="true" type="tns:ArrayOfBattle" />
+  <xs:complexType name="Battle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BattleId" type="ser:guid" />
+      <xs:element minOccurs="0" name="player1" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="player1Move" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="player1Score" type="xs:int" />
+      <xs:element minOccurs="0" name="player2" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="player2Move" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="player2Score" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Battle" nillable="true" type="tns:Battle" />
+</xs:schema>

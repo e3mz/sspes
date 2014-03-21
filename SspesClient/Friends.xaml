@@ -50,9 +50,11 @@
                     <TextBlock HorizontalAlignment="Left" Margin="12,132,0,0" Name="textBlock1" Text="Benutzername" Width="221" Height="32" VerticalAlignment="Top" />
                     <TextBlock Height="47" HorizontalAlignment="Left" Margin="12,168,0,0" x:Name="tbx_userName" VerticalAlignment="Top" Width="272" FontSize="32" />
                     <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,219,0,0" x:Name="textBlock1_Copy" Text="GUID" VerticalAlignment="Top" Width="221" />
-                    <TextBlock HorizontalAlignment="Left" Margin="12,255,0,139" x:Name="tbx_guid" Width="436" FontSize="32" TextWrapping="Wrap" />
+                    <TextBlock HorizontalAlignment="Left" Margin="12,255,0,0" x:Name="tbx_guid" Width="436" FontSize="26" TextWrapping="Wrap" Height="110" VerticalAlignment="Top" />
                     <Button Content="Bild aufnehmen" Margin="91,8,0,0" BorderThickness="0" Background="Black" Opacity="0.525" BorderBrush="Black" Height="91" VerticalAlignment="Top" FontSize="21.333" />
                     <Path Data="M12,108 L448.05618,108" Fill="#FF232323" Height="4" Margin="-37,108,-27,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" UseLayoutRounding="False" VerticalAlignment="Top" Opacity="0.26"/>
+                    <TextBlock Height="32" HorizontalAlignment="Left" Margin="14,376,0,0" Name="textBlock2" Text="PushChannelUri" VerticalAlignment="Top" Width="221" />
+                    <TextBlock FontSize="26" Height="110" HorizontalAlignment="Left" Margin="14,412,0,0" Name="tbl_pushChanUri" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" />
                 </Grid>
             </controls:PivotItem>
             <!--Pivotelement drei-->

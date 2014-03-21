@@ -1,11 +1,11 @@
-﻿<xapCache source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\SspesClient.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="14.03.2014 00:16:24">
+﻿<xapCache source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\SspesClient.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="21.03.2014 00:50:31">
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="17.02.2014 14:44:12" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Background.png" archivePath="Background.png" lastWriteTime="16.02.2014 22:11:55" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="16.02.2014 22:11:55" />
-  <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.dll" archivePath="SspesClient.dll" lastWriteTime="14.03.2014 00:16:24" />
+  <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.dll" archivePath="SspesClient.dll" lastWriteTime="21.03.2014 00:50:31" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="29.08.2011 22:49:08" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="09.12.2013 23:43:05" />
-  <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="13.03.2014 22:26:54" />
+  <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="20.03.2014 21:33:14" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Images\appbar.add.rest.png" archivePath="Images\appbar.add.rest.png" lastWriteTime="17.02.2014 18:25:19" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Images\appbar.feature.settings.rest.png" archivePath="Images\appbar.feature.settings.rest.png" lastWriteTime="17.02.2014 18:25:19" />
   <file source="C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="16.02.2014 22:11:55" />

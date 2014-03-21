@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Friend = SspesClient.SspesService.Friend;
+using Friend = SspesClient.SspesService.User;
 
 namespace SspesClient.Classes
 {
@@ -17,9 +17,9 @@ namespace SspesClient.Classes
         
         public Guid BattleId { get; set; }
      
-        public Friend player1 { get; set; }
+        public User player1 { get; set; }
     
-        public Friend player2 { get; set; }
+        public User player2 { get; set; }
 
         public String player1Move { get; set; }
   

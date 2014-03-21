@@ -17,8 +17,8 @@ namespace SspesClient.SspesService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Friend", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService")]
-    public partial class Friend : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes")]
+    public partial class User : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string PChanField;
         
@@ -95,14 +95,14 @@ namespace SspesClient.SspesService {
     [System.Runtime.Serialization.DataContractAttribute(Name="Challenge", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes")]
     public partial class Challenge : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private SspesClient.SspesService.Friend ChallengeFromField;
+        private SspesClient.SspesService.User ChallengeFromField;
         
         private System.Guid ChallengeIdField;
         
-        private SspesClient.SspesService.Friend ChallengeToField;
+        private SspesClient.SspesService.User ChallengeToField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SspesClient.SspesService.Friend ChallengeFrom {
+        public SspesClient.SspesService.User ChallengeFrom {
             get {
                 return this.ChallengeFromField;
             }
@@ -128,7 +128,7 @@ namespace SspesClient.SspesService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SspesClient.SspesService.Friend ChallengeTo {
+        public SspesClient.SspesService.User ChallengeTo {
             get {
                 return this.ChallengeToField;
             }
@@ -152,18 +152,18 @@ namespace SspesClient.SspesService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Battle", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Battle", Namespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes")]
     public partial class Battle : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid BattleIdField;
         
-        private SspesClient.SspesService.Friend player1Field;
+        private SspesClient.SspesService.User player1Field;
         
         private string player1MoveField;
         
         private int player1ScoreField;
         
-        private SspesClient.SspesService.Friend player2Field;
+        private SspesClient.SspesService.User player2Field;
         
         private string player2MoveField;
         
@@ -183,7 +183,7 @@ namespace SspesClient.SspesService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SspesClient.SspesService.Friend player1 {
+        public SspesClient.SspesService.User player1 {
             get {
                 return this.player1Field;
             }
@@ -222,7 +222,7 @@ namespace SspesClient.SspesService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SspesClient.SspesService.Friend player2 {
+        public SspesClient.SspesService.User player2 {
             get {
                 return this.player2Field;
             }
@@ -271,52 +271,52 @@ namespace SspesClient.SspesService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SspesService.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SspesService.ISspesService")]
+    public interface ISspesService {
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
-        System.IAsyncResult Beginlogin(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/login", ReplyAction="http://tempuri.org/ISspesService/loginResponse")]
+        System.IAsyncResult Beginlogin(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState);
         
-        SspesClient.SspesService.Friend Endlogin(System.IAsyncResult result);
+        SspesClient.SspesService.User Endlogin(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/register", ReplyAction="http://tempuri.org/IService1/registerResponse")]
-        System.IAsyncResult Beginregister(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/register", ReplyAction="http://tempuri.org/ISspesService/registerResponse")]
+        System.IAsyncResult Beginregister(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState);
         
-        SspesClient.SspesService.Friend Endregister(System.IAsyncResult result);
+        SspesClient.SspesService.User Endregister(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/test", ReplyAction="http://tempuri.org/ISspesService/testResponse")]
         System.IAsyncResult Begintest(string input, System.AsyncCallback callback, object asyncState);
         
-        SspesClient.SspesService.Friend Endtest(System.IAsyncResult result);
+        SspesClient.SspesService.User Endtest(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getAllUsers", ReplyAction="http://tempuri.org/IService1/getAllUsersResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/getAllUsers", ReplyAction="http://tempuri.org/ISspesService/getAllUsersResponse")]
         System.IAsyncResult BegingetAllUsers(System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> EndgetAllUsers(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> EndgetAllUsers(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/challenge", ReplyAction="http://tempuri.org/IService1/challengeResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/challenge", ReplyAction="http://tempuri.org/ISspesService/challengeResponse")]
         System.IAsyncResult Beginchallenge(SspesClient.SspesService.Challenge challenge, System.AsyncCallback callback, object asyncState);
         
         bool Endchallenge(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/updateUser", ReplyAction="http://tempuri.org/IService1/updateUserResponse")]
-        System.IAsyncResult BeginupdateUser(SspesClient.SspesService.Friend friend, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/updateUser", ReplyAction="http://tempuri.org/ISspesService/updateUserResponse")]
+        System.IAsyncResult BeginupdateUser(SspesClient.SspesService.User friend, System.AsyncCallback callback, object asyncState);
         
         bool EndupdateUser(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getAllBattlesForUser", ReplyAction="http://tempuri.org/IService1/getAllBattlesForUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/getAllBattlesForUser", ReplyAction="http://tempuri.org/ISspesService/getAllBattlesForUserResponse")]
         System.IAsyncResult BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> EndgetAllBattlesForUser(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/playerMove", ReplyAction="http://tempuri.org/IService1/playerMoveResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/playerMove", ReplyAction="http://tempuri.org/ISspesService/playerMoveResponse")]
         System.IAsyncResult BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState);
         
         bool EndplayerMove(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : SspesClient.SspesService.IService1, System.ServiceModel.IClientChannel {
+    public interface ISspesServiceChannel : SspesClient.SspesService.ISspesService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -330,10 +330,10 @@ namespace SspesClient.SspesService {
             this.results = results;
         }
         
-        public SspesClient.SspesService.Friend Result {
+        public SspesClient.SspesService.User Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SspesClient.SspesService.Friend)(this.results[0]));
+                return ((SspesClient.SspesService.User)(this.results[0]));
             }
         }
     }
@@ -349,10 +349,10 @@ namespace SspesClient.SspesService {
             this.results = results;
         }
         
-        public SspesClient.SspesService.Friend Result {
+        public SspesClient.SspesService.User Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SspesClient.SspesService.Friend)(this.results[0]));
+                return ((SspesClient.SspesService.User)(this.results[0]));
             }
         }
     }
@@ -368,10 +368,10 @@ namespace SspesClient.SspesService {
             this.results = results;
         }
         
-        public SspesClient.SspesService.Friend Result {
+        public SspesClient.SspesService.User Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SspesClient.SspesService.Friend)(this.results[0]));
+                return ((SspesClient.SspesService.User)(this.results[0]));
             }
         }
     }
@@ -387,10 +387,10 @@ namespace SspesClient.SspesService {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> Result {
+        public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend>)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User>)(this.results[0]));
             }
         }
     }
@@ -473,7 +473,7 @@ namespace SspesClient.SspesService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<SspesClient.SspesService.IService1>, SspesClient.SspesService.IService1 {
+    public partial class SspesServiceClient : System.ServiceModel.ClientBase<SspesClient.SspesService.ISspesService>, SspesClient.SspesService.ISspesService {
         
         private BeginOperationDelegate onBeginloginDelegate;
         
@@ -535,22 +535,22 @@ namespace SspesClient.SspesService {
         
         private System.Threading.SendOrPostCallback onCloseCompletedDelegate;
         
-        public Service1Client() {
+        public SspesServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public SspesServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public SspesServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SspesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SspesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -597,22 +597,22 @@ namespace SspesClient.SspesService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.Beginlogin(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.Beginlogin(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState) {
             return base.Channel.Beginlogin(user, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SspesClient.SspesService.Friend SspesClient.SspesService.IService1.Endlogin(System.IAsyncResult result) {
+        SspesClient.SspesService.User SspesClient.SspesService.ISspesService.Endlogin(System.IAsyncResult result) {
             return base.Channel.Endlogin(result);
         }
         
         private System.IAsyncResult OnBeginlogin(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SspesClient.SspesService.Friend user = ((SspesClient.SspesService.Friend)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).Beginlogin(user, callback, asyncState);
+            SspesClient.SspesService.User user = ((SspesClient.SspesService.User)(inValues[0]));
+            return ((SspesClient.SspesService.ISspesService)(this)).Beginlogin(user, callback, asyncState);
         }
         
         private object[] OnEndlogin(System.IAsyncResult result) {
-            SspesClient.SspesService.Friend retVal = ((SspesClient.SspesService.IService1)(this)).Endlogin(result);
+            SspesClient.SspesService.User retVal = ((SspesClient.SspesService.ISspesService)(this)).Endlogin(result);
             return new object[] {
                     retVal};
         }
@@ -624,11 +624,11 @@ namespace SspesClient.SspesService {
             }
         }
         
-        public void loginAsync(SspesClient.SspesService.Friend user) {
+        public void loginAsync(SspesClient.SspesService.User user) {
             this.loginAsync(user, null);
         }
         
-        public void loginAsync(SspesClient.SspesService.Friend user, object userState) {
+        public void loginAsync(SspesClient.SspesService.User user, object userState) {
             if ((this.onBeginloginDelegate == null)) {
                 this.onBeginloginDelegate = new BeginOperationDelegate(this.OnBeginlogin);
             }
@@ -643,22 +643,22 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.Beginregister(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.Beginregister(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState) {
             return base.Channel.Beginregister(user, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SspesClient.SspesService.Friend SspesClient.SspesService.IService1.Endregister(System.IAsyncResult result) {
+        SspesClient.SspesService.User SspesClient.SspesService.ISspesService.Endregister(System.IAsyncResult result) {
             return base.Channel.Endregister(result);
         }
         
         private System.IAsyncResult OnBeginregister(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SspesClient.SspesService.Friend user = ((SspesClient.SspesService.Friend)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).Beginregister(user, callback, asyncState);
+            SspesClient.SspesService.User user = ((SspesClient.SspesService.User)(inValues[0]));
+            return ((SspesClient.SspesService.ISspesService)(this)).Beginregister(user, callback, asyncState);
         }
         
         private object[] OnEndregister(System.IAsyncResult result) {
-            SspesClient.SspesService.Friend retVal = ((SspesClient.SspesService.IService1)(this)).Endregister(result);
+            SspesClient.SspesService.User retVal = ((SspesClient.SspesService.ISspesService)(this)).Endregister(result);
             return new object[] {
                     retVal};
         }
@@ -670,11 +670,11 @@ namespace SspesClient.SspesService {
             }
         }
         
-        public void registerAsync(SspesClient.SspesService.Friend user) {
+        public void registerAsync(SspesClient.SspesService.User user) {
             this.registerAsync(user, null);
         }
         
-        public void registerAsync(SspesClient.SspesService.Friend user, object userState) {
+        public void registerAsync(SspesClient.SspesService.User user, object userState) {
             if ((this.onBeginregisterDelegate == null)) {
                 this.onBeginregisterDelegate = new BeginOperationDelegate(this.OnBeginregister);
             }
@@ -689,22 +689,22 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.Begintest(string input, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.Begintest(string input, System.AsyncCallback callback, object asyncState) {
             return base.Channel.Begintest(input, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SspesClient.SspesService.Friend SspesClient.SspesService.IService1.Endtest(System.IAsyncResult result) {
+        SspesClient.SspesService.User SspesClient.SspesService.ISspesService.Endtest(System.IAsyncResult result) {
             return base.Channel.Endtest(result);
         }
         
         private System.IAsyncResult OnBegintest(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string input = ((string)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).Begintest(input, callback, asyncState);
+            return ((SspesClient.SspesService.ISspesService)(this)).Begintest(input, callback, asyncState);
         }
         
         private object[] OnEndtest(System.IAsyncResult result) {
-            SspesClient.SspesService.Friend retVal = ((SspesClient.SspesService.IService1)(this)).Endtest(result);
+            SspesClient.SspesService.User retVal = ((SspesClient.SspesService.ISspesService)(this)).Endtest(result);
             return new object[] {
                     retVal};
         }
@@ -735,21 +735,21 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.BegingetAllUsers(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.BegingetAllUsers(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BegingetAllUsers(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> SspesClient.SspesService.IService1.EndgetAllUsers(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> SspesClient.SspesService.ISspesService.EndgetAllUsers(System.IAsyncResult result) {
             return base.Channel.EndgetAllUsers(result);
         }
         
         private System.IAsyncResult OnBegingetAllUsers(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SspesClient.SspesService.IService1)(this)).BegingetAllUsers(callback, asyncState);
+            return ((SspesClient.SspesService.ISspesService)(this)).BegingetAllUsers(callback, asyncState);
         }
         
         private object[] OnEndgetAllUsers(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> retVal = ((SspesClient.SspesService.IService1)(this)).EndgetAllUsers(result);
+            System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> retVal = ((SspesClient.SspesService.ISspesService)(this)).EndgetAllUsers(result);
             return new object[] {
                     retVal};
         }
@@ -779,22 +779,22 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.Beginchallenge(SspesClient.SspesService.Challenge challenge, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.Beginchallenge(SspesClient.SspesService.Challenge challenge, System.AsyncCallback callback, object asyncState) {
             return base.Channel.Beginchallenge(challenge, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SspesClient.SspesService.IService1.Endchallenge(System.IAsyncResult result) {
+        bool SspesClient.SspesService.ISspesService.Endchallenge(System.IAsyncResult result) {
             return base.Channel.Endchallenge(result);
         }
         
         private System.IAsyncResult OnBeginchallenge(object[] inValues, System.AsyncCallback callback, object asyncState) {
             SspesClient.SspesService.Challenge challenge = ((SspesClient.SspesService.Challenge)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).Beginchallenge(challenge, callback, asyncState);
+            return ((SspesClient.SspesService.ISspesService)(this)).Beginchallenge(challenge, callback, asyncState);
         }
         
         private object[] OnEndchallenge(System.IAsyncResult result) {
-            bool retVal = ((SspesClient.SspesService.IService1)(this)).Endchallenge(result);
+            bool retVal = ((SspesClient.SspesService.ISspesService)(this)).Endchallenge(result);
             return new object[] {
                     retVal};
         }
@@ -825,22 +825,22 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.BeginupdateUser(SspesClient.SspesService.Friend friend, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.BeginupdateUser(SspesClient.SspesService.User friend, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginupdateUser(friend, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SspesClient.SspesService.IService1.EndupdateUser(System.IAsyncResult result) {
+        bool SspesClient.SspesService.ISspesService.EndupdateUser(System.IAsyncResult result) {
             return base.Channel.EndupdateUser(result);
         }
         
         private System.IAsyncResult OnBeginupdateUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SspesClient.SspesService.Friend friend = ((SspesClient.SspesService.Friend)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).BeginupdateUser(friend, callback, asyncState);
+            SspesClient.SspesService.User friend = ((SspesClient.SspesService.User)(inValues[0]));
+            return ((SspesClient.SspesService.ISspesService)(this)).BeginupdateUser(friend, callback, asyncState);
         }
         
         private object[] OnEndupdateUser(System.IAsyncResult result) {
-            bool retVal = ((SspesClient.SspesService.IService1)(this)).EndupdateUser(result);
+            bool retVal = ((SspesClient.SspesService.ISspesService)(this)).EndupdateUser(result);
             return new object[] {
                     retVal};
         }
@@ -852,11 +852,11 @@ namespace SspesClient.SspesService {
             }
         }
         
-        public void updateUserAsync(SspesClient.SspesService.Friend friend) {
+        public void updateUserAsync(SspesClient.SspesService.User friend) {
             this.updateUserAsync(friend, null);
         }
         
-        public void updateUserAsync(SspesClient.SspesService.Friend friend, object userState) {
+        public void updateUserAsync(SspesClient.SspesService.User friend, object userState) {
             if ((this.onBeginupdateUserDelegate == null)) {
                 this.onBeginupdateUserDelegate = new BeginOperationDelegate(this.OnBeginupdateUser);
             }
@@ -871,22 +871,22 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.BegingetAllBattlesForUser(System.Guid userId, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BegingetAllBattlesForUser(userId, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> SspesClient.SspesService.IService1.EndgetAllBattlesForUser(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> SspesClient.SspesService.ISspesService.EndgetAllBattlesForUser(System.IAsyncResult result) {
             return base.Channel.EndgetAllBattlesForUser(result);
         }
         
         private System.IAsyncResult OnBegingetAllBattlesForUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
             System.Guid userId = ((System.Guid)(inValues[0]));
-            return ((SspesClient.SspesService.IService1)(this)).BegingetAllBattlesForUser(userId, callback, asyncState);
+            return ((SspesClient.SspesService.ISspesService)(this)).BegingetAllBattlesForUser(userId, callback, asyncState);
         }
         
         private object[] OnEndgetAllBattlesForUser(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> retVal = ((SspesClient.SspesService.IService1)(this)).EndgetAllBattlesForUser(result);
+            System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Battle> retVal = ((SspesClient.SspesService.ISspesService)(this)).EndgetAllBattlesForUser(result);
             return new object[] {
                     retVal};
         }
@@ -917,12 +917,12 @@ namespace SspesClient.SspesService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.IService1.BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult SspesClient.SspesService.ISspesService.BeginplayerMove(string move, System.Guid playerId, System.Guid battleId, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginplayerMove(move, playerId, battleId, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        bool SspesClient.SspesService.IService1.EndplayerMove(System.IAsyncResult result) {
+        bool SspesClient.SspesService.ISspesService.EndplayerMove(System.IAsyncResult result) {
             return base.Channel.EndplayerMove(result);
         }
         
@@ -930,11 +930,11 @@ namespace SspesClient.SspesService {
             string move = ((string)(inValues[0]));
             System.Guid playerId = ((System.Guid)(inValues[1]));
             System.Guid battleId = ((System.Guid)(inValues[2]));
-            return ((SspesClient.SspesService.IService1)(this)).BeginplayerMove(move, playerId, battleId, callback, asyncState);
+            return ((SspesClient.SspesService.ISspesService)(this)).BeginplayerMove(move, playerId, battleId, callback, asyncState);
         }
         
         private object[] OnEndplayerMove(System.IAsyncResult result) {
-            bool retVal = ((SspesClient.SspesService.IService1)(this)).EndplayerMove(result);
+            bool retVal = ((SspesClient.SspesService.ISspesService)(this)).EndplayerMove(result);
             return new object[] {
                     retVal};
         }
@@ -1032,39 +1032,39 @@ namespace SspesClient.SspesService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SspesClient.SspesService.IService1 CreateChannel() {
-            return new Service1ClientChannel(this);
+        protected override SspesClient.SspesService.ISspesService CreateChannel() {
+            return new SspesServiceClientChannel(this);
         }
         
-        private class Service1ClientChannel : ChannelBase<SspesClient.SspesService.IService1>, SspesClient.SspesService.IService1 {
+        private class SspesServiceClientChannel : ChannelBase<SspesClient.SspesService.ISspesService>, SspesClient.SspesService.ISspesService {
             
-            public Service1ClientChannel(System.ServiceModel.ClientBase<SspesClient.SspesService.IService1> client) : 
+            public SspesServiceClientChannel(System.ServiceModel.ClientBase<SspesClient.SspesService.ISspesService> client) : 
                     base(client) {
             }
             
-            public System.IAsyncResult Beginlogin(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult Beginlogin(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = user;
                 System.IAsyncResult _result = base.BeginInvoke("login", _args, callback, asyncState);
                 return _result;
             }
             
-            public SspesClient.SspesService.Friend Endlogin(System.IAsyncResult result) {
+            public SspesClient.SspesService.User Endlogin(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SspesClient.SspesService.Friend _result = ((SspesClient.SspesService.Friend)(base.EndInvoke("login", _args, result)));
+                SspesClient.SspesService.User _result = ((SspesClient.SspesService.User)(base.EndInvoke("login", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult Beginregister(SspesClient.SspesService.Friend user, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult Beginregister(SspesClient.SspesService.User user, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = user;
                 System.IAsyncResult _result = base.BeginInvoke("register", _args, callback, asyncState);
                 return _result;
             }
             
-            public SspesClient.SspesService.Friend Endregister(System.IAsyncResult result) {
+            public SspesClient.SspesService.User Endregister(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SspesClient.SspesService.Friend _result = ((SspesClient.SspesService.Friend)(base.EndInvoke("register", _args, result)));
+                SspesClient.SspesService.User _result = ((SspesClient.SspesService.User)(base.EndInvoke("register", _args, result)));
                 return _result;
             }
             
@@ -1075,9 +1075,9 @@ namespace SspesClient.SspesService {
                 return _result;
             }
             
-            public SspesClient.SspesService.Friend Endtest(System.IAsyncResult result) {
+            public SspesClient.SspesService.User Endtest(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SspesClient.SspesService.Friend _result = ((SspesClient.SspesService.Friend)(base.EndInvoke("test", _args, result)));
+                SspesClient.SspesService.User _result = ((SspesClient.SspesService.User)(base.EndInvoke("test", _args, result)));
                 return _result;
             }
             
@@ -1087,9 +1087,9 @@ namespace SspesClient.SspesService {
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> EndgetAllUsers(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> EndgetAllUsers(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend> _result = ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.Friend>)(base.EndInvoke("getAllUsers", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User> _result = ((System.Collections.ObjectModel.ObservableCollection<SspesClient.SspesService.User>)(base.EndInvoke("getAllUsers", _args, result)));
                 return _result;
             }
             
@@ -1106,7 +1106,7 @@ namespace SspesClient.SspesService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginupdateUser(SspesClient.SspesService.Friend friend, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginupdateUser(SspesClient.SspesService.User friend, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = friend;
                 System.IAsyncResult _result = base.BeginInvoke("updateUser", _args, callback, asyncState);

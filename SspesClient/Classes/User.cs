@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace SspesClient.Classes
 {
-    public class Friend
+    public class User
     {
        
         public Guid UserId { get; set; }
@@ -22,7 +22,7 @@ namespace SspesClient.Classes
         
         public String PChan { get; set; }
 
-        public Friend()
+        public User()
         {
             UserId = Guid.NewGuid();
             PChan = "";

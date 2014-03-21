@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Friend = SspesClient.SspesService.Friend;
+using User = SspesClient.SspesService.User;
 
 using System.Collections.ObjectModel;
 using Microsoft.Phone.Notification;
@@ -23,9 +23,9 @@ namespace SspesClient
     public partial class App : Application
     {
 
-        public static ObservableCollection<Friend> friendsList = new ObservableCollection<Friend>();
-        public static Friend currentUser = new Friend();
-        public static Friend currentOpponent = new Friend();
+        public static ObservableCollection<User> friendsList = new ObservableCollection<User>();
+        public static User currentUser = new User();
+        public static User currentOpponent = new User();
         public static Battle currentBattle = new Battle();
 
         public static HttpNotificationChannel pushChannel;
