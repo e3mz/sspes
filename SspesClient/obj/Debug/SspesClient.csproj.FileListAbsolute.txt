@@ -5,7 +5,9 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\D
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\AppManifest.xaml
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\SspesClient.xap
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.dll
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.xml
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\App.g.i.cs
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\Friends.g.i.cs
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\MainPage.g.i.cs
@@ -14,6 +16,4 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\D
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.dll
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.pdb
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\XapCacheFile.xml
-C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.dll
-C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Newtonsoft.Json.xml
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.csprojResolveAssemblyReference.cache

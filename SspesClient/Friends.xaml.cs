@@ -19,6 +19,8 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Xml.Serialization;
 using System.IO;
+using Microsoft.Phone.Tasks;
+using System.Windows.Media.Imaging;
 
 
 
@@ -27,6 +29,7 @@ namespace SspesClient
     public partial class Friends : PhoneApplicationPage
     {
         SspesService.SspesServiceClient mySer = new SspesService.SspesServiceClient();
+       
 
         public Friends()
         {
@@ -37,6 +40,7 @@ namespace SspesClient
 
             tbx_guid.Text = App.currentUser.UserId.ToString();
             tbx_userName.Text = App.currentUser.UserName;
+            tbl_pushChanUri.Text = App.currentUser.PChan;
 
             App.pushChannel = HttpNotificationChannel.Find(App.channelName);
             if (App.pushChannel == null)
@@ -68,40 +72,18 @@ namespace SspesClient
             string relativeUri = string.Empty;
             String param = e.Collection["wp:Param"];
             String[] singleParams = param.Split('&');
-            String oppoIdFrom = singleParams[0].Remove(0, 1);
+            String oppoIdFrom = singleParams[2].Remove(0, 1);
             String oppoId = oppoIdFrom.Replace("FromId=", "");
-            String oppoName = singleParams[1].Replace("FromName=", "");
+            String oppoName = singleParams[3].Replace("FromName=", "");
 
             Challenge challenge = new Challenge() { ChallengeFrom = findUserByName(oppoName), ChallengeTo = App.currentUser, ChallengeId = new Guid(e.Collection["wp:Text2"]) };
 
-            //Challenge challenge = CustomSerializer.DeserializeChallenge(e.Collection["Battle"]);
-
-            //// Parse out the information that was part of the message.
-            //foreach (string key in e.Collection.Keys)
-            //{
-            //    message.AppendFormat("{0}: {1}\n", key, e.Collection[key]);
-
-            //    if (string.Compare(
-            //        key,
-            //        "wp:Param",
-            //        System.Globalization.CultureInfo.InvariantCulture,
-            //        System.Globalization.CompareOptions.IgnoreCase) == 0)
-            //    {
-            //        relativeUri = e.Collection[key];
-            //    }
-            //}
-
-            // Display a dialog of all the fields in the toast.
             Dispatcher.BeginInvoke(() =>
             {
                 //MessageBox.Show("Channelge from: " + challenge.ChallengeFrom.UserName);
                 App.currentBattle = new Battle() { BattleId = challenge.ChallengeId, player1 = challenge.ChallengeFrom, player2 = App.currentUser };
                 App.currentOpponent = challenge.ChallengeFrom;
                 NavigationService.Navigate(new Uri("/Arena.xaml", UriKind.Relative));
-
-
-
-
 
             });
         }
@@ -136,7 +118,7 @@ namespace SspesClient
                 }
                 else
                 {
-                    // MessageBox.Show("Game over");
+                    //MessageBox.Show("Game over: "+ battle.BattleId);
                     App.currentBattle = battle;
                     showdown();
 
@@ -145,10 +127,6 @@ namespace SspesClient
             });
 
 
-            //Dispatcher.BeginInvoke(() =>
-            //    MessageBox.Show(String.Format("Received Notification {0}:\n{1}",
-            //        DateTime.Now.ToShortTimeString(), message))
-            //        );
         }
 
         void pushChannel_ErrorOccurred(object sender, NotificationChannelErrorEventArgs e)
@@ -207,50 +185,44 @@ namespace SspesClient
         private void btn_play_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            chellange(btn.Tag.ToString());
+            challenge(btn.Tag.ToString());
 
         }
 
-        private void chellange(String opponent)
+        private void challenge(String opponent)
         {
-            //MessageBox.Show("Playing against " + opponent);
             App.currentOpponent = findUserByName(opponent);
-            App.currentOpponent = (from u in App.friendsList
-                                   where u.UserName == opponent
-                                   select u).FirstOrDefault();
-
             Challenge c = new Challenge() { ChallengeFrom = App.currentUser, ChallengeTo = App.currentOpponent, ChallengeId = Guid.NewGuid() };
             App.currentBattle = new Battle() { BattleId = c.ChallengeId, player1 = App.currentUser, player2 = App.currentOpponent };
             mySer.challengeAsync(c);
-
-
 
         }
 
         private User findUserByName(string username)
         {
             User user = (from u in App.friendsList
-                      where u.UserName == username
-                      select u).FirstOrDefault();
+                         where u.UserName == username
+                         select u).FirstOrDefault();
             if (user == null) return null;
             return user;
-            
-            
+
+
         }
 
         private void Image_Tap(object sender, GestureEventArgs e)
         {
             Image btn = (Image)sender;
-            chellange(btn.Tag.ToString());
+            challenge(btn.Tag.ToString());
         }
 
-        
+
 
         public void showdown()
         {
             if (App.currentBattle.player1Move == App.currentBattle.player2Move)
             {
-                MessageBox.Show("Unentschieden");
+                //MessageBox.Show("Unentschieden");
+                announceWinner(null);
             }
             else
             {
@@ -329,7 +301,11 @@ namespace SspesClient
 
         void announceWinner(User winner)
         {
-            if (winner.UserId == App.currentUser.UserId)
+            if (winner == null)
+            {
+                MessageBox.Show("Draw! Try again!");
+            }
+            else if (winner.UserId == App.currentUser.UserId)
             {
                 MessageBox.Show("Gratulations, You win!");
             }
@@ -354,6 +330,26 @@ namespace SspesClient
             reader.Close();
 
             return battle;
+        }
+
+        private void appbar_button3_Click(object sender, EventArgs e)
+        {
+            mySer.getAllUsersAsync();
+        }
+
+        void cameraCaptureTask_Completed(object sender, PhotoResult e)
+        {
+            BitmapImage img = new BitmapImage();
+            img.SetSource(e.ChosenPhoto);
+            img_currentUserImage.Source = img;
+        }
+
+        private void btn_takePicture_Click(object sender, RoutedEventArgs e)
+        {
+            CameraCaptureTask cameraCaptureTask;
+            cameraCaptureTask = new CameraCaptureTask();
+            cameraCaptureTask.Completed += new EventHandler<PhotoResult>(cameraCaptureTask_Completed);
+            cameraCaptureTask.Show();
         }
     }
 }

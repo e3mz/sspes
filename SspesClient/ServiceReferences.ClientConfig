@@ -9,7 +9,7 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://192.168.1.124:8891/SspesService/SspesService.svc/api"
+            <endpoint address="http://85.214.221.156:8891/SspesService.svc/api"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISspesService"
                 contract="SspesService.ISspesService" name="BasicHttpBinding_ISspesService" />
         </client>

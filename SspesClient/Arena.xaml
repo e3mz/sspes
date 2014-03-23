@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
-    <Grid x:Name="LayoutRoot" Background="#FF002D4E">
+    <Grid x:Name="LayoutRoot" Background="#F3242424">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -24,41 +24,63 @@
         
 
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
-        <Grid x:Name="ContentPanel" Margin="12,0,0,0" Grid.Row="1">
-            <Image Height="462" HorizontalAlignment="Left" Margin="0,154,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="456" Source="/SspesClient;component/Images/sspes_bg_white.png" />
-            <Rectangle Height="148" HorizontalAlignment="Left" Margin="-12,0,0,0" Name="rectangle1" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Fill="#FD000000" Opacity="0.22" />
-            <Rectangle Fill="Black" Height="148" HorizontalAlignment="Left" Margin="-12,620,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Opacity="0.215" />
-            <Image Height="110" HorizontalAlignment="Left" Name="image2" Stretch="Uniform" VerticalAlignment="Top" Width="112" Source="/SspesClient;component/Images/Icon-user.png" Margin="6,22,0,0" />
-            <Image Height="110" HorizontalAlignment="Left" Margin="6,641,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="110" Source="/SspesClient;component/Images/Icon-user.png" />
-            <TextBlock Height="64" HorizontalAlignment="Left" Margin="124,76,0,0" Name="tbx_opponentName" Text="Peter Lustig" VerticalAlignment="Top" Width="344" FontSize="32" />
-            <TextBlock FontSize="32" Height="64" HorizontalAlignment="Left" Margin="124,698,0,0" Name="tbx_playerName" Text="deranderetyp" VerticalAlignment="Top" Width="293" />
-            <Ellipse x:Name="el_scissors" Height="131" Margin="156,175,177,0" StrokeThickness="8" VerticalAlignment="Top" Tag="scissors" Tap="gameMove_Tap">
+        <Grid x:Name="ContentPanel" Margin="12,0,0,0" Grid.Row="1" >
+            <Image Height="462" HorizontalAlignment="Left" Margin="0,154,0,0" Name="img_board" Stretch="Fill" VerticalAlignment="Top" Width="456" Source="/SspesClient;component/Images/Board_white_noColor.png" />
+            <Rectangle Height="118" HorizontalAlignment="Left" Margin="-12,0,0,0" Name="rectangle1" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Fill="#FD000000" Opacity="0.6" />
+            <Rectangle Fill="Black" Height="127" HorizontalAlignment="Left" Margin="-12,641,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Opacity="0.595" />
+            <Image Height="110" HorizontalAlignment="Left" Name="image2" Stretch="Uniform" VerticalAlignment="Top" Width="110" Source="/SspesClient;component/Images/Icon-user.png" Margin="8,8,0,0" />
+            <Image Height="110" HorizontalAlignment="Left" Margin="6,650,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="110" Source="/SspesClient;component/Images/Icon-user.png" />
+            <TextBlock Height="72" HorizontalAlignment="Left" Margin="133,8,0,0" Name="tbx_opponentName" Text="Peter Lustig" VerticalAlignment="Top" Width="316" FontSize="26.667" />
+            <TextBlock FontSize="26.667" Height="64" HorizontalAlignment="Left" Margin="133,651,0,0" Name="tbx_playerName" Text="deranderetyp" VerticalAlignment="Top" Width="257" />
+            <Ellipse x:Name="el_stone" Height="160" Margin="156,154,168,0" StrokeThickness="8" VerticalAlignment="Top" Tag="stone" Tap="gameMove_Tap">
                 <Ellipse.Fill>
                     <SolidColorBrush />
                 </Ellipse.Fill>
             </Ellipse>
-            <Ellipse x:Name="el_paper" Margin="0,280,27,357" StrokeThickness="8" HorizontalAlignment="Right" Width="135" Tag="paper" Tap="gameMove_Tap">
+            <Ellipse x:Name="el_paper" Margin="0,269,12,335" StrokeThickness="8" HorizontalAlignment="Right" Width="156" Tag="paper" Tap="gameMove_Tap">
                 <Ellipse.Fill>
                     <SolidColorBrush />
                 </Ellipse.Fill>
             </Ellipse>
-            <Ellipse x:Name="el_stone" Margin="0,0,79,181" StrokeThickness="8" HorizontalAlignment="Right" Width="135" Height="131" VerticalAlignment="Bottom" Tag="stone" Tap="gameMove_Tap">
+            <Ellipse x:Name="el_scissors" Margin="0,0,68,158" StrokeThickness="8" HorizontalAlignment="Right" Width="146" Height="154" VerticalAlignment="Bottom" Tag="scissors" Tap="gameMove_Tap">
                 <Ellipse.Fill>
                     <SolidColorBrush />
                 </Ellipse.Fill>
             </Ellipse>
-            <Ellipse x:Name="el_lizard" Margin="72,0,0,176" StrokeThickness="8" HorizontalAlignment="Left" Width="135" Height="131" VerticalAlignment="Bottom" Tag="lizard" Tap="gameMove_Tap">
+            <Ellipse x:Name="el_lizard" Margin="60,0,0,158" StrokeThickness="8" HorizontalAlignment="Left" Width="153" Height="154" VerticalAlignment="Bottom" Tag="lizard" Tap="gameMove_Tap">
                 <Ellipse.Fill>
                     <SolidColorBrush />
                 </Ellipse.Fill>
             </Ellipse>
-            <Ellipse x:Name="el_spock" Margin="17,280,0,357" StrokeThickness="8" HorizontalAlignment="Left" Width="135" Tag="spock" Tap="gameMove_Tap">
+            <Ellipse x:Name="el_spock" Margin="0,269,0,335" StrokeThickness="8" HorizontalAlignment="Left" Width="156" Tag="spock" Tap="gameMove_Tap">
                 <Ellipse.Fill>
                     <SolidColorBrush />
                 </Ellipse.Fill>
             </Ellipse>
-            <TextBlock x:Name="tbx_pl2Score" HorizontalAlignment="Right" Height="76" Margin="0,0,27,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="105" FontSize="64" TextAlignment="Right"/>
-            <TextBlock x:Name="tbx_pl1Score" HorizontalAlignment="Right" Height="76" Margin="0,0,27,76" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="105" FontSize="64" TextAlignment="Right"/>
+            <TextBlock x:Name="tbx_pl2Score" HorizontalAlignment="Right" Height="80" Margin="0,8,27,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="105" FontSize="64" TextAlignment="Right" Padding="0"/>
+            <TextBlock x:Name="tbx_pl1Score" HorizontalAlignment="Right" Height="76" Margin="0,0,27,28" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="105" FontSize="64" TextAlignment="Right"/>
+            <Rectangle Height="7" Margin="-12,0,0,126" VerticalAlignment="Bottom" StrokeThickness="0">
+            	<Rectangle.Fill>
+            		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            			<GradientStop Color="Black" Offset="1"/>
+            			<GradientStop Color="#FF002D4E"/>
+            		</LinearGradientBrush>
+            	</Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="7" Margin="-12,118,0,0" VerticalAlignment="Top" StrokeThickness="0">
+            	<Rectangle.Fill>
+            		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            			<GradientStop Color="Black"/>
+            			<GradientStop Color="#FF002D4E" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Rectangle.Fill>
+            </Rectangle>
+            <Button x:Name="btn_info" Content="
+                    " HorizontalAlignment="Right" Height="71" Margin="0,131,6,0" VerticalAlignment="Top" Width="74" BorderBrush="#FF222222" Click="btn_info_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/appbar.questionmark.rest.png" />
+                </Button.Background>
+            </Button>
         </Grid>
     </Grid>
  

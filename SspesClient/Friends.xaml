@@ -16,24 +16,49 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
-    <Grid x:Name="LayoutRoot" Background="#FF002D4E">
+    <!--<Grid x:Name="LayoutRoot" Background="#FF002D4E">-->
+    <Grid x:Name="LayoutRoot" Background="Black">
         <!--Pivotsteuerelement-->
         <controls:Pivot Title="MEINE ANWENDUNG" Background="#004B4B4B">
             <!--Pivotelement eins-->
             <controls:PivotItem Header="Matches">
                 <Grid Margin="0,0,0,0" Width="480">
-                    <ListBox Height="620" HorizontalAlignment="Left" Name="lb_friends" VerticalAlignment="Top" Width="470" Margin="-1,0,0,0">
+                    <ListBox Height="537" HorizontalAlignment="Left" x:Name="lb_friends" VerticalAlignment="Top" Width="470" Margin="-1,0,0,0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Height="80">
-                                    <!--<Rectangle Height="80" Width="80" Fill="#B3000000" Margin="374,0,0,4"></Rectangle>
+                                    <!--<Rectangle Height="80" Width="80" Fill="#B3000000" Margin="374,0,0,4"></Rectangle>   /SspesClient;component/Images/Icon-user.png
                                     <Rectangle Height="80" Width="80" Fill="#B3000000" Margin="210,0,0,4"></Rectangle>-->
                                     <!--<Rectangle Height="80"  Fill="#37000000" Margin="0,0,0,4"></Rectangle>-->
                                     <StackPanel Orientation="Horizontal" Height="80" Margin="0,0,0,4">
-                                        <Image Height="50" Width="50" Source="/SspesClient;component/Images/Icon-user.png"></Image>
-                                        <TextBlock Text="{Binding UserName}" FontSize="24" Height="50" Width="240"></TextBlock>
-                                        <Image Height="50" Width="50" Source="/SspesClient;component/Images/fist_blau.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="16,0,0,0" ></Image>
-                                        <Image Height="50" Width="50" Source="/SspesClient;component/Images/3fist_blau2.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="35,0,0,0"></Image>
+                                        <Image Height="90" Width="90" Source="/SspesClient;component/Images/Icon-user.png"/>
+                                        <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                            <TextBlock Text="{Binding UserName}" FontSize="24"  Width="200" Margin="5,0,0,0"/>
+                                            <TextBlock Text="12 : 14" FontSize="18" Margin="5,5,0,0" />
+                                        </ListBox>
+                                        <StackPanel Orientation="Horizontal" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                            <Image Height="80" Width="80" Source="/SspesClient;component/Images/fist_blau.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="0,0,0,0" HorizontalAlignment="Center"/>
+                                            <Image Height="80" Width="80" Source="/SspesClient;component/Images/3fist_blau2.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="0,0,0,0"/>
+                                            <!--<Button Tag="{Binding UserName}" Tap="Image_Tap"  Width="90" Height="90" Margin="-5,0,0,0" BorderBrush="Black">
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/SspesClient;component/Images/fist_blau.png" Stretch="Uniform" />
+                                                </Button.Background>
+                                            </Button>
+                                            <Button Tag="{Binding UserName}" Tap="Image_Tap"  Width="90" Height="90" Margin="-5,0,0,0" BorderBrush="Black">
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/SspesClient;component/Images/3fist_blau2.png" Stretch="Uniform" />
+                                                </Button.Background>
+                                            </Button>-->
+                                            <TextBlock Text="12 : 14" FontSize="18" Margin="5,0,0,0" />
+                                        </StackPanel>
+                                       
+                                        <!--<Button Tag="{Binding UserName}" Tap="Image_Tap" Height="90" Width="90">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/SspesClient;component/Images/3fist_blau2.png" Stretch="Uniform" />
+                                            </Button.Background>
+                                        </Button>-->
+                                        <!--<Image Height="50" Width="50" Source="/SspesClient;component/Images/fist_blau.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="16,0,0,0" ></Image>-->
+                                        <!--<Image Height="50" Width="50" Source="/SspesClient;component/Images/3fist_blau2.png" Tag="{Binding UserName}" Tap="Image_Tap" Margin="35,0,0,0"></Image>-->
                                         <!--<Button Content="Play" Click="btn_play_Click" Background="#FF002D4E" Tag="{Binding UserName}"></Button>-->
                                     </StackPanel>
                                 </Grid>
@@ -45,16 +70,21 @@
                 
             <!--Pivotelement zwei-->
             <controls:PivotItem Header="Profil">
-                <Grid>
-                    <Image Height="84" HorizontalAlignment="Left" Margin="8,8,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="75" Source="/SspesClient;component/Images/Icon-user.png" />
-                    <TextBlock HorizontalAlignment="Left" Margin="12,132,0,0" Name="textBlock1" Text="Benutzername" Width="221" Height="32" VerticalAlignment="Top" />
-                    <TextBlock Height="47" HorizontalAlignment="Left" Margin="12,168,0,0" x:Name="tbx_userName" VerticalAlignment="Top" Width="272" FontSize="32" />
-                    <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,219,0,0" x:Name="textBlock1_Copy" Text="GUID" VerticalAlignment="Top" Width="221" />
-                    <TextBlock HorizontalAlignment="Left" Margin="12,255,0,0" x:Name="tbx_guid" Width="436" FontSize="26" TextWrapping="Wrap" Height="110" VerticalAlignment="Top" />
-                    <Button Content="Bild aufnehmen" Margin="91,8,0,0" BorderThickness="0" Background="Black" Opacity="0.525" BorderBrush="Black" Height="91" VerticalAlignment="Top" FontSize="21.333" />
+                <Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <!--<Rectangle Fill="#C6000000" Stroke="Black" Margin="-12,110,-12,0" Height="425" />-->
+                    <Image Height="84" HorizontalAlignment="Left" Margin="8,8,0,0" Name="img_currentUserImage" VerticalAlignment="Top" Width="84" Source="/SspesClient;component/Images/Icon-user.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" >
+                    	<Image.RenderTransform>
+                    		<CompositeTransform Rotation="90"/>
+                    	</Image.RenderTransform>
+                    </Image>
+                    <TextBlock HorizontalAlignment="Left" Margin="13,118,0,0" Name="textBlock1" Text="Benutzername" Width="221" Height="32" VerticalAlignment="Top" />
+                    <TextBlock Height="47" HorizontalAlignment="Left" Margin="13,154,0,0" x:Name="tbx_userName" VerticalAlignment="Top" Width="272" FontSize="32" />
+                    <TextBlock Height="32" HorizontalAlignment="Left" Margin="13,223,0,0" x:Name="textBlock1_Copy" Text="GUID" VerticalAlignment="Top" Width="221" />
+                    <TextBlock HorizontalAlignment="Left" Margin="12,255,0,0" x:Name="tbx_guid" Width="436" FontSize="26" TextWrapping="Wrap" Height="87" VerticalAlignment="Top" />
+                    <Button Content="Bild aufnehmen" Margin="91,8,0,0" BorderThickness="0" Background="Black" Opacity="0.525" BorderBrush="Black" Height="91" VerticalAlignment="Top" FontSize="21.333"  Name="btn_takePicture" Click="btn_takePicture_Click" />
                     <Path Data="M12,108 L448.05618,108" Fill="#FF232323" Height="4" Margin="-37,108,-27,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" UseLayoutRounding="False" VerticalAlignment="Top" Opacity="0.26"/>
-                    <TextBlock Height="32" HorizontalAlignment="Left" Margin="14,376,0,0" Name="textBlock2" Text="PushChannelUri" VerticalAlignment="Top" Width="221" />
-                    <TextBlock FontSize="26" Height="110" HorizontalAlignment="Left" Margin="14,412,0,0" Name="tbl_pushChanUri" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" />
+                    <TextBlock Height="32" HorizontalAlignment="Left" Margin="13,355,0,0" Name="textBlock2" Text="PushChannelUri" VerticalAlignment="Top" Width="221" />
+                    <TextBlock FontSize="26" HorizontalAlignment="Left" Margin="13,391,0,0" Name="tbl_pushChanUri" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" />
                 </Grid>
             </controls:PivotItem>
             <!--Pivotelement drei-->
@@ -70,7 +100,7 @@
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar.add.rest.png" Text="Hinzufügen"/>
             <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar.feature.settings.rest.png" Text="Optionen"/>
-            
+            <shell:ApplicationBarIconButton x:Name="appbar_button3" IconUri="/Images/appbar.refresh.rest.png" Text="Aktualisieren" Click="appbar_button3_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

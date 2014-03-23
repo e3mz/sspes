@@ -1,45 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.1.124:8891/SspesService/SspesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="User">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="PChan" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
-      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="User" nillable="true" type="tns:User" />
-  <xs:complexType name="ArrayOfUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
-  <xs:complexType name="Challenge">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ChallengeFrom" nillable="true" type="tns:User" />
-      <xs:element minOccurs="0" name="ChallengeId" type="ser:guid" />
-      <xs:element minOccurs="0" name="ChallengeTo" nillable="true" type="tns:User" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Challenge" nillable="true" type="tns:Challenge" />
-  <xs:complexType name="ArrayOfBattle">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Battle" nillable="true" type="tns:Battle" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfBattle" nillable="true" type="tns:ArrayOfBattle" />
-  <xs:complexType name="Battle">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="BattleId" type="ser:guid" />
-      <xs:element minOccurs="0" name="player1" nillable="true" type="tns:User" />
-      <xs:element minOccurs="0" name="player1Move" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="player1Score" type="xs:int" />
-      <xs:element minOccurs="0" name="player2" nillable="true" type="tns:User" />
-      <xs:element minOccurs="0" name="player2Move" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="player2Score" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Battle" nillable="true" type="tns:Battle" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://85.214.221.156:8891/SspesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" />
+  <xs:import schemaLocation="http://85.214.221.156:8891/SspesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="user" nillable="true" type="q1:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="loginResult" nillable="true" type="q2:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="user" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="registerResult" nillable="true" type="q4:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="getAllUsersResult" nillable="true" type="q5:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="challenge">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="challenge" nillable="true" type="q6:Challenge" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="challengeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="challengeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="friend" nillable="true" type="q7:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllBattlesForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllBattlesForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SspesRestService.Classes" minOccurs="0" name="getAllBattlesForUserResult" nillable="true" type="q9:ArrayOfBattle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="playerMove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="move" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="playerId" type="q10:guid" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="battleId" type="q11:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="playerMoveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerMoveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

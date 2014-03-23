@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aaa77158-fb3f-4bc0-af6d-2bbe1d2b6ba0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10778599-54b9-49f7-b88a-4d404cb747d1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,14 +20,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.124:8891/SspesService/SspesService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://85.214.221.156:8891/SspesService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SspesService.xsd" MetadataType="Schema" ID="51e1c02f-9480-4fdb-8a8b-388302b931c1" SourceId="1" SourceUrl="http://192.168.1.124:8891/SspesService/SspesService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SspesService1.xsd" MetadataType="Schema" ID="99942e35-defa-480c-b451-48c6f9e29aef" SourceId="1" SourceUrl="http://192.168.1.124:8891/SspesService/SspesService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SspesService.wsdl" MetadataType="Wsdl" ID="8d01cdc1-6827-4c1e-871a-034eedece517" SourceId="1" SourceUrl="http://192.168.1.124:8891/SspesService/SspesService.svc?wsdl" />
-    <MetadataFile FileName="SspesService2.xsd" MetadataType="Schema" ID="882e8a0f-4cda-46bf-a28c-ea9d9b0ecf2c" SourceId="1" SourceUrl="http://192.168.1.124:8891/SspesService/SspesService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SspesService.disco" MetadataType="Disco" ID="da4919c9-e390-4e9d-91d0-9e5097281ff1" SourceId="1" SourceUrl="http://192.168.1.124:8891/SspesService/SspesService.svc?disco" />
+    <MetadataFile FileName="SspesService.xsd" MetadataType="Schema" ID="88a70ae6-3cd5-4bee-8630-d72eaa78989b" SourceId="1" SourceUrl="http://85.214.221.156:8891/SspesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SspesService.disco" MetadataType="Disco" ID="3dab0020-eb58-45f6-8e37-2ed0bfc2cd5d" SourceId="1" SourceUrl="http://85.214.221.156:8891/SspesService.svc?disco" />
+    <MetadataFile FileName="SspesService1.xsd" MetadataType="Schema" ID="75ec4391-3162-4fea-9b7a-cafe0fb97c17" SourceId="1" SourceUrl="http://85.214.221.156:8891/SspesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SspesService2.xsd" MetadataType="Schema" ID="fdbaf981-e741-43ce-aa27-48359f5d8522" SourceId="1" SourceUrl="http://85.214.221.156:8891/SspesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SspesService.wsdl" MetadataType="Wsdl" ID="9b0189cc-0d06-458a-8b47-c0a329caa5f3" SourceId="1" SourceUrl="http://85.214.221.156:8891/SspesService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

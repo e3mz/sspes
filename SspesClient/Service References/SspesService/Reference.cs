@@ -284,11 +284,6 @@ namespace SspesClient.SspesService {
         
         SspesClient.SspesService.User Endregister(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/test", ReplyAction="http://tempuri.org/ISspesService/testResponse")]
-        System.IAsyncResult Begintest(string input, System.AsyncCallback callback, object asyncState);
-        
-        SspesClient.SspesService.User Endtest(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISspesService/getAllUsers", ReplyAction="http://tempuri.org/ISspesService/getAllUsersResponse")]
         System.IAsyncResult BegingetAllUsers(System.AsyncCallback callback, object asyncState);
         
@@ -345,25 +340,6 @@ namespace SspesClient.SspesService {
         private object[] results;
         
         public registerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public SspesClient.SspesService.User Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((SspesClient.SspesService.User)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class testCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public testCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -487,12 +463,6 @@ namespace SspesClient.SspesService {
         
         private System.Threading.SendOrPostCallback onregisterCompletedDelegate;
         
-        private BeginOperationDelegate onBegintestDelegate;
-        
-        private EndOperationDelegate onEndtestDelegate;
-        
-        private System.Threading.SendOrPostCallback ontestCompletedDelegate;
-        
         private BeginOperationDelegate onBegingetAllUsersDelegate;
         
         private EndOperationDelegate onEndgetAllUsersDelegate;
@@ -579,8 +549,6 @@ namespace SspesClient.SspesService {
         public event System.EventHandler<loginCompletedEventArgs> loginCompleted;
         
         public event System.EventHandler<registerCompletedEventArgs> registerCompleted;
-        
-        public event System.EventHandler<testCompletedEventArgs> testCompleted;
         
         public event System.EventHandler<getAllUsersCompletedEventArgs> getAllUsersCompleted;
         
@@ -686,52 +654,6 @@ namespace SspesClient.SspesService {
             }
             base.InvokeAsync(this.onBeginregisterDelegate, new object[] {
                         user}, this.onEndregisterDelegate, this.onregisterCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SspesClient.SspesService.ISspesService.Begintest(string input, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Begintest(input, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SspesClient.SspesService.User SspesClient.SspesService.ISspesService.Endtest(System.IAsyncResult result) {
-            return base.Channel.Endtest(result);
-        }
-        
-        private System.IAsyncResult OnBegintest(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string input = ((string)(inValues[0]));
-            return ((SspesClient.SspesService.ISspesService)(this)).Begintest(input, callback, asyncState);
-        }
-        
-        private object[] OnEndtest(System.IAsyncResult result) {
-            SspesClient.SspesService.User retVal = ((SspesClient.SspesService.ISspesService)(this)).Endtest(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OntestCompleted(object state) {
-            if ((this.testCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.testCompleted(this, new testCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void testAsync(string input) {
-            this.testAsync(input, null);
-        }
-        
-        public void testAsync(string input, object userState) {
-            if ((this.onBegintestDelegate == null)) {
-                this.onBegintestDelegate = new BeginOperationDelegate(this.OnBegintest);
-            }
-            if ((this.onEndtestDelegate == null)) {
-                this.onEndtestDelegate = new EndOperationDelegate(this.OnEndtest);
-            }
-            if ((this.ontestCompletedDelegate == null)) {
-                this.ontestCompletedDelegate = new System.Threading.SendOrPostCallback(this.OntestCompleted);
-            }
-            base.InvokeAsync(this.onBegintestDelegate, new object[] {
-                        input}, this.onEndtestDelegate, this.ontestCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1065,19 +987,6 @@ namespace SspesClient.SspesService {
             public SspesClient.SspesService.User Endregister(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 SspesClient.SspesService.User _result = ((SspesClient.SspesService.User)(base.EndInvoke("register", _args, result)));
-                return _result;
-            }
-            
-            public System.IAsyncResult Begintest(string input, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = input;
-                System.IAsyncResult _result = base.BeginInvoke("test", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public SspesClient.SspesService.User Endtest(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                SspesClient.SspesService.User _result = ((SspesClient.SspesService.User)(base.EndInvoke("test", _args, result)));
                 return _result;
             }
             

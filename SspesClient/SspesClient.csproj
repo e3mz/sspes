@@ -109,18 +109,12 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
-    <None Include="Service References\SspesService\configuration91.svcinfo" />
-    <None Include="Service References\SspesService\configuration.svcinfo" />
-    <None Include="Service References\SspesService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SspesService\SspesClient.SspesService.User.datasource">
+    <Content Include="Images\appbar.questionmark.rest.png" />
+    <Content Include="Images\appbar.refresh.rest.png" />
+    <None Include="Service References\SspesService\SspesClient.SspesService.Battle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SspesService\SspesService.disco" />
-    <Content Include="ServiceReferences.ClientConfig" />
-    <None Include="Service References\SspesService\SspesClient.SspesService.Battle.datasource">
+    <None Include="Service References\SspesService\SspesClient.SspesService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SspesService\SspesService.wsdl" />
@@ -133,6 +127,24 @@
     <None Include="Service References\SspesService\SspesService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Resource Include="Images\Board.png" />
+    <Resource Include="Images\Board_white.png" />
+    <Resource Include="Images\Board_white2.png" />
+    <None Include="Service References\SspesService\configuration91.svcinfo" />
+    <None Include="Service References\SspesService\configuration.svcinfo" />
+    <None Include="Service References\SspesService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\Board_white_noColor.png" />
+    <Resource Include="Images\appbar.save.rest.png" />
+    <Content Include="Images\board_lizard.png" />
+    <Content Include="Images\board_paper.png" />
+    <Content Include="Images\board_siz.png" />
+    <Content Include="Images\board_spock.png" />
+    <Content Include="Images\board_stone.png" />
+    <None Include="Service References\SspesService\SspesService.disco" />
+    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">

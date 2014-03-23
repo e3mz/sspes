@@ -26,7 +26,8 @@
             <Image Height="503" HorizontalAlignment="Left" x:Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="510" Source="/SspesClient;component/Images/sspes_bg_white.png" Margin="-25,-58,0,0" Opacity="0.45" />
             <Rectangle Fill="#C6000000" Stroke="Black" Margin="-12,133,-12,-24" />
             <Button Content="Login" Height="93" Margin="-23,0,-24,23" VerticalAlignment="Bottom" BorderThickness="0" Background="#FF002D4E" Click="btn_Login_Click" />
-            <CheckBox Content="LocalServer enabled" Height="69" HorizontalAlignment="Left" Margin="-12,46,0,0" Name="cb_localServer" VerticalAlignment="Top" Width="431" />
+            <CheckBox Content="LocalServer enabled" Height="69" HorizontalAlignment="Left" Margin="-12,46,0,0" Name="cb_localServer" VerticalAlignment="Top" Width="268" IsEnabledChanged="cb_localServer_IsEnabledChanged" />
+            <Button Content="Logout" Height="76" HorizontalAlignment="Left" Margin="262,43,0,0" Name="btn_logout" VerticalAlignment="Top" Width="172" Click="btn_logout_Click" />
         </Grid>
 
         <Rectangle Fill="#C6000000" Stroke="Black"/>
@@ -42,7 +43,7 @@
         <TextBox Margin="-11,155,-12,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" Padding="7,3,2,12" BorderThickness="0" Height="79" VerticalAlignment="Top" Name="tbx_userName" />
         <PasswordBox Margin="-11,274,-12,248" Grid.Row="1" Password="sfgsg" Name="pw_pw" />
         <TextBlock Margin="9,0,15,194" Grid.Row="1" TextWrapping="Wrap" Height="43" VerticalAlignment="Bottom" Text="Passwort wiederholen
-"/>
+" Name="tbl_passwordWdh" />
         <PasswordBox Height="78" Margin="-11,0,-12,137" Grid.Row="1" VerticalAlignment="Bottom" Password="sfgsg" Name="pw_pw_wdh" />
     </Grid>
 
