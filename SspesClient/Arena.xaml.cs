@@ -248,24 +248,7 @@ namespace SspesClient
                 ContentPanel.Visibility = Visibility.Collapsed;
                 if (App.currentUser != null)
                 {
-                    //MessageBox.Show("Keine currentUser! Logge neu ein ...");
-                    App.pushChannel = HttpNotificationChannel.Find(App.channelName);
-                    if (App.pushChannel == null)
-                    {
-                        App.pushChannel = new HttpNotificationChannel(App.channelName);
-                        App.pushChannel.Open();
-                        
-                        App.pushChannel.BindToShellToast();
-                    }
-                    App.pushChannel.HttpNotificationReceived += new EventHandler<HttpNotificationEventArgs>(pushChannel_HttpNotificationReceived);
-                    User f = new User()
-                    {
-                        UserName = settings["UserName"] as string,
-                        UserId = new Guid(settings["UserId"] as string),
-                        Password = settings["UserPw"] as string,
-                        PChan = App.pushChannel.ChannelUri.ToString()
-                    };
-                    mySer.loginAsync(f);
+                    lateLogin();
                 }
 
 
@@ -284,6 +267,28 @@ namespace SspesClient
 
 
 
+        }
+
+        private void lateLogin()
+        {
+            //MessageBox.Show("Keine currentUser! Logge neu ein ...");
+            App.pushChannel = HttpNotificationChannel.Find(App.channelName);
+            if (App.pushChannel == null)
+            {
+                App.pushChannel = new HttpNotificationChannel(App.channelName);
+                App.pushChannel.Open();
+
+                App.pushChannel.BindToShellToast();
+            }
+            App.pushChannel.HttpNotificationReceived += new EventHandler<HttpNotificationEventArgs>(pushChannel_HttpNotificationReceived);
+            User f = new User()
+            {
+                UserName = settings["UserName"] as string,
+                UserId = new Guid(settings["UserId"] as string),
+                Password = settings["UserPw"] as string,
+                PChan = App.pushChannel.ChannelUri.ToString()
+            };
+            mySer.loginAsync(f);
         }
 
         private User findUserByName(string username)
@@ -314,7 +319,14 @@ namespace SspesClient
             using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Notification.Body))
             {
                 string inp = reader.ReadToEnd();
-                battle = JsonConvert.DeserializeObject<Battle>(inp);
+                if (inp.Equals("moveDone"))
+                {
+                    tbx_opponentName.Foreground = new SolidColorBrush(Colors.Green);
+                }
+                else
+                {
+                    battle = JsonConvert.DeserializeObject<Battle>(inp); 
+                }
             }
 
             Dispatcher.BeginInvoke(() =>

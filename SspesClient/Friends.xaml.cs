@@ -35,8 +35,13 @@ namespace SspesClient
         {
             InitializeComponent();
             mySer.getAllUsersCompleted += new EventHandler<SspesService.getAllUsersCompletedEventArgs>(mySer_getAllUsersCompleted);
-            mySer.getAllUsersAsync();
+            //mySer.getAllUsersAsync();
+            mySer.getFriendsByIdCompleted += new EventHandler<SspesService.getFriendsByIdCompletedEventArgs>(mySer_getFriendsByIdCompleted);
+            mySer.getFriendsByIdAsync(App.currentUser.UserId.ToString());
             mySer.challengeCompleted += new EventHandler<SspesService.challengeCompletedEventArgs>(mySer_challengeCompleted);
+
+
+            lb_friends.ItemsSource = App.friendsList;
 
             tbx_guid.Text = App.currentUser.UserId.ToString();
             tbx_userName.Text = App.currentUser.UserName;
@@ -65,6 +70,13 @@ namespace SspesClient
                 //    pushChannel.ChannelUri.ToString()));
             }
         }
+
+        void mySer_getFriendsByIdCompleted(object sender, SspesService.getFriendsByIdCompletedEventArgs e)
+        {
+            App.friendsList = e.Result;
+        }
+
+        
 
         void pushChannel_ShellToastNotificationReceived(object sender, NotificationEventArgs e)
         {
@@ -96,8 +108,11 @@ namespace SspesClient
             using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Notification.Body))
             {
                 string inp = reader.ReadToEnd();
+                if (inp.Equals("moveDone"))
+                {
 
-                if (inp.Contains("Challenge"))
+                }
+                else if (inp.Contains("Challenge"))
                 {
                     challenge = JsonConvert.DeserializeObject<Challenge>(inp);
                 }
@@ -334,7 +349,7 @@ namespace SspesClient
 
         private void appbar_button3_Click(object sender, EventArgs e)
         {
-            mySer.getAllUsersAsync();
+            mySer.getFriendsByIdAsync(App.currentUser.UserId.ToString());
         }
 
         void cameraCaptureTask_Completed(object sender, PhotoResult e)
@@ -350,6 +365,19 @@ namespace SspesClient
             cameraCaptureTask = new CameraCaptureTask();
             cameraCaptureTask.Completed += new EventHandler<PhotoResult>(cameraCaptureTask_Completed);
             cameraCaptureTask.Show();
+        }
+
+        private void appbar_btn_addFriend_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri(@"/AddFriendDialog.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (App.friendsList != null)
+            {
+                lb_friends.ItemsSource = App.friendsList; 
+            }
         }
     }
 }

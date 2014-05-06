@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ISspesService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://85.214.221.156:8891/SspesService.svc/api"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISspesService"
+                contract="SspesService.ISspesService" name="BasicHttpBinding_ISspesService" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SspesClient.AddFriendDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Sspes" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Freunde finden" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="64" />
+        </StackPanel>
+
+        <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Uniform" ImageSource="/SspesClient;component/Images/sspes_bg_white.png" Opacity="0.135">
+        			<ImageBrush.RelativeTransform>
+        				<CompositeTransform CenterY="0.5" CenterX="0.5" ScaleY="0.9"/>
+        			</ImageBrush.RelativeTransform>
+        		</ImageBrush>
+        	</Grid.Background>
+        	<TextBlock Height="49" Margin="8,29,29,0" TextWrapping="Wrap" Text="Name eingeben:" VerticalAlignment="Top" FontSize="26.667"/>
+        	<TextBox Height="85" Margin="0,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="tbx_friendToAdd" />
+        	<Button x:Name="btn_addFriend" Content="Hinzufügen" Margin="0,212,0,303" Background="#FF002D4E" BorderBrush="#FF002D4E" Click="btn_addFriend_Click" /></Grid>
+    </Grid>
+ 
+    <!--Beispielcode zur Verwendung von ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Schaltfläche 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Schaltfläche 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Menüelement 1"/>
+                <shell:ApplicationBarMenuItem Text="Menüelement 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
