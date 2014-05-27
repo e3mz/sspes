@@ -322,10 +322,12 @@ namespace SspesClient
             }
             else if (winner.UserId == App.currentUser.UserId)
             {
+                Arena_win.Play();
                 MessageBox.Show("Gratulations, You win!");
             }
             else
             {
+                Arena_lose.Play();
                 MessageBox.Show("You Lose!");
             }
             App.currentBattle = null;

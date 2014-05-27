@@ -7,3 +7,12 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\ob
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.csproj.GenerateResource.Cache
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.exe
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\WCFServiceHost\obj\x86\Debug\WCFServiceHost.pdb
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\bin\Debug\WCFServiceHost.exe.config
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\obj\x86\Debug\WCFServiceHost.exe
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\obj\x86\Debug\WCFServiceHost.pdb
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\bin\Debug\WCFServiceHost.exe
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\bin\Debug\WCFServiceHost.pdb
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\bin\Debug\Fleck.dll
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\obj\x86\Debug\WCFServiceHost.csprojResolveAssemblyReference.cache
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\obj\x86\Debug\WCFServiceHost.ProjectInstaller.resources
+C:\Users\wtfis_000\CSharpWorkspace\sspes\WCFServiceHost\obj\x86\Debug\WCFServiceHost.csproj.GenerateResource.Cache

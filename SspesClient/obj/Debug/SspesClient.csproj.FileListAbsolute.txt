@@ -20,3 +20,25 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\D
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\press.mp3
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\loser.mp3
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\win.mp3
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\ApplicationIcon.png
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Background.png
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Sounds\loser.mp3
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Sounds\press.mp3
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Sounds\win.mp3
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\SspesClient.dll
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\SspesClient.pdb
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\AppManifest.xaml
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\SspesClient.xap
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Newtonsoft.Json.dll
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\Bin\Debug\Newtonsoft.Json.xml
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\App.g.cs
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\AddFriendDialog.g.cs
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\Friends.g.cs
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\MainPage.g.cs
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\Arena.g.cs
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\SspesClient.g.resources
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\SspesClient.dll
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\SspesClient.pdb
+C:\Users\wtfis_000\CSharpWorkspace\sspes\SspesClient\obj\Debug\XapCacheFile.xml

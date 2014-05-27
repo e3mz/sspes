@@ -18,6 +18,9 @@
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
     <!--<Grid x:Name="LayoutRoot" Background="#FF002D4E">-->
     <Grid x:Name="LayoutRoot" Background="Black">
+        <MediaElement x:Name="Arena_press" Source="sounds/press.mp3" AutoPlay="False"></MediaElement>
+        <MediaElement x:Name="Arena_win" Source="sounds/win.mp3" AutoPlay="False"></MediaElement>
+        <MediaElement x:Name="Arena_lose" Source="sounds/loser.mp3" AutoPlay="False"></MediaElement>
         <!--Pivotsteuerelement-->
         <controls:Pivot Title="MEINE ANWENDUNG">
         	<controls:Pivot.Background>
