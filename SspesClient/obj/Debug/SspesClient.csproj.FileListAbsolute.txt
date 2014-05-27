@@ -16,5 +16,7 @@ C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\D
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.dll
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.pdb
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\XapCacheFile.xml
-C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\SspesClient.csprojResolveAssemblyReference.cache
 C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\obj\Debug\AddFriendDialog.g.i.cs
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\press.mp3
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\loser.mp3
+C:\Users\raG\documents\visual studio 2010\Projects\SspesClient\SspesClient\Bin\Debug\Sounds\win.mp3

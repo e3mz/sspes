@@ -192,6 +192,15 @@
     <Content Include="Images\appbar.add.rest.png" />
     <Content Include="Images\appbar.feature.settings.rest.png" />
     <Resource Include="Images\fist_blau.png" />
+    <Content Include="Sounds\loser.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\press.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\win.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

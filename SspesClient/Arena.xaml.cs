@@ -55,6 +55,15 @@ namespace SspesClient
 
         private void gameMove_Tap(object sender, GestureEventArgs e)
         {
+            if (!(Arena_press.CurrentState == MediaElementState.Playing))
+            {
+                Arena_press.Play();
+            }
+            else 
+            {
+                Arena_press.Stop();
+                Arena_press.Play();
+            }
 
             String move = ((Ellipse)sender).Tag.ToString();
 
@@ -198,14 +207,17 @@ namespace SspesClient
             //}
             if (winner == null)
             {
+
                 MessageBox.Show("Draw! Try again!");
             }
             else if (winner.UserId == App.currentUser.UserId)
             {
+                Arena_win.Play();
                 MessageBox.Show("Gratulations, You win!");
             }
             else
             {
+                Arena_lose.Play();
                 MessageBox.Show("You Lose!");
             }
 

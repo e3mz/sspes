@@ -12,7 +12,8 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
-
+    
+    
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
     <Grid x:Name="LayoutRoot" Background="#F3242424">
         <Grid.RowDefinitions>
@@ -25,6 +26,9 @@
 
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
         <Grid x:Name="ContentPanel" Margin="12,0,0,0" Grid.Row="1" >
+            <MediaElement x:Name="Arena_press" Source="sounds/press.mp3" AutoPlay="False"></MediaElement>
+            <MediaElement x:Name="Arena_win" Source="sounds/win.mp3" AutoPlay="False"></MediaElement>
+            <MediaElement x:Name="Arena_lose" Source="sounds/lose.mp3" AutoPlay="False"></MediaElement>
             <Image Height="462" HorizontalAlignment="Left" Margin="0,154,0,0" Name="img_board" Stretch="Fill" VerticalAlignment="Top" Width="456" Source="/SspesClient;component/Images/Board_white_noColor.png" />
             <Rectangle Height="118" HorizontalAlignment="Left" Margin="-12,0,0,0" Name="rectangle1" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Fill="#FD000000" Opacity="0.6" />
             <Rectangle Fill="Black" Height="127" HorizontalAlignment="Left" Margin="-12,641,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="480" Opacity="0.595" />
